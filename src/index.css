@@ -87,7 +87,10 @@ video {
   position: relative;
   color: white;
   background-color: transparent;
-  text-decoration: inherit;
+  text-decoration: underline;
+  text-decoration-color: indianred;
+  text-decoration-thickness: 5px;
+  text-decoration-style:dotted;
 }
 
 .headerA2 {
