@@ -15,9 +15,6 @@ export default function AutoPlaySilentVideo(props) {
         muted
         playsInline
         preload="auto"
-        onLoadedData={() => {
-          props.setLoading(false);
-        }}
       >
         <source src={props.video} type="video/mp4" />
       </video>

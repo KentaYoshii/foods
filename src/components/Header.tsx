@@ -1,36 +1,68 @@
 import React from "react";
+import { useTransitionNavigate } from "../useTransitionNavigate";
 
 const Header = (props: { current: string }) => {
+  const { transitionNavigate } = useTransitionNavigate();
   return (
-    <div className="headerTop">
+    <div className="headerTop" style={{
+        viewTransitionName: "header"
+    }}>
       <div className="headerSecond">
         <div className="row">
           <div className="headerThird">
             <nav className="headerNav">
-              {props.current === "Home" ? (
+              {props.current === "/" ? (
                 <ul className="headerUL">
                   <li>
-                    <a className="headerA" href="/">
+                    <button className="headerA" onClick={() => transitionNavigate("/")}>
                       Home
-                    </a>
+                    </button>
                   </li>
                   <li>
-                    <a className="headerA2" href="/gallery">
+                    <button className="headerA2" onClick={() => transitionNavigate("/about", "slide-to-left")}>
+                      About
+                    </button>
+                  </li>
+                  <li>
+                    <button className="headerA2" onClick={() => transitionNavigate("/gallery", "slide-to-left")}>
                       Gallery
-                    </a>
+                    </button>
+                  </li>
+                </ul>
+              ) : props.current === "/about" ? (
+                <ul className="headerUL">
+                  <li>
+                    <button className="headerA2" onClick={() => transitionNavigate("/", "slide-to-right")}>
+                      Home
+                    </button>
+                  </li>
+                  <li>
+                    <button className="headerA" onClick={() => transitionNavigate("/about")}>
+                      About
+                    </button>
+                  </li>
+                  <li>
+                    <button className="headerA2" onClick={() => transitionNavigate("/gallery", "slide-to-left")}>
+                      Gallery
+                    </button>
                   </li>
                 </ul>
               ) : (
                 <ul className="headerUL">
                   <li>
-                    <a className="headerA2" href="/">
+                    <button className="headerA2" onClick={() => transitionNavigate("/", "slide-to-right")}>
                       Home
-                    </a>
+                    </button>
                   </li>
                   <li>
-                    <a className="headerA" href="/gallery">
+                    <button className="headerA2" onClick={() => transitionNavigate("/about", "slide-to-right")}>
+                      About
+                    </button>
+                  </li>
+                  <li>
+                    <button className="headerA" onClick={() => transitionNavigate("/gallery")}>
                       Gallery
-                    </a>
+                    </button>
                   </li>
                 </ul>
               )}

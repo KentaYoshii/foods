@@ -6,7 +6,6 @@ import HomeContent from "../components/HomeContent";
 const Home = () => {
   return (
     <div className="main">
-      <Header current={"Home"}/>
       <div className="overlay"></div>
       <AutoPlaySilentVideo video={video_bg}/>
       <div className="content">

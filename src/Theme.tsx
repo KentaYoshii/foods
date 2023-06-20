@@ -12,6 +12,16 @@ theme.typography.h2 = {
     }
 }
 
+theme.typography.body1 = {
+    fontSize: '1.0rem',
+    '@media (min-width:600px)': {
+        fontSize: '1.25rem',
+    },
+    [theme.breakpoints.up('md')]: {
+        fontSize: '1.5rem'
+    }
+}
+
 
 
 export default theme;
