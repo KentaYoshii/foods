@@ -1,15 +1,11 @@
-import HomeContent from '../components/HomeContent'
-
+import AboutContent from "../components/AboutContent";
 
 const About = () => {
   return (
-    <div className="main">
-      <div className="overlay"></div>
-      <div className="content">
-        <HomeContent />
-      </div>
+    <div className="about">
+      <AboutContent />
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

@@ -1,6 +1,5 @@
 import video_bg from "../assets/Kenta-food.mp4";
 import AutoPlaySilentVideo from "../components/AutoPlay";
-import Header from "../components/Header";
 import HomeContent from "../components/HomeContent";
 
 const Home = () => {

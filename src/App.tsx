@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
   const Layout = () => {
     const location = useLocation();
-    console.log(location.pathname)
+    console.log(location.pathname);
     return (
       <>
         <Header current={location.pathname} />
@@ -20,9 +20,9 @@ function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="gallery" element={<Gallery />} />
+        <Route path="/" element={<Home />} />
       </Route>
     </Routes>
   );
