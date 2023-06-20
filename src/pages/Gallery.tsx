@@ -1,9 +1,12 @@
-import React from 'react'
-import Header from '../components/Header'
+import HomeContent from "../components/HomeContent"
 
 const Gallery = () => {
   return (
-    <div className='main'>
+    <div className="main">
+      <div className="overlay"></div>
+      <div className="content">
+        <HomeContent />
+      </div>
     </div>
   )
 }
