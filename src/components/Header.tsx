@@ -3,9 +3,11 @@ import { useTransitionNavigate } from "../useTransitionNavigate";
 
 const Header = (props: { current: string }) => {
   const { transitionNavigate } = useTransitionNavigate();
+  const darken = props.current === "/gallery";
   return (
     <div className="headerTop" style={{
-        viewTransitionName: "header"
+        viewTransitionName: "header",
+        backgroundColor: darken ? "rgba(0,0,0,0.9)" : ""
     }}>
       <div className="headerSecond">
         <div className="row">

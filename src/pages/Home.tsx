@@ -1,6 +1,7 @@
 import video_bg from "../assets/Kenta-food.mp4";
 import AutoPlaySilentVideo from "../components/AutoPlay";
 import HomeContent from "../components/HomeContent";
+import { Box } from "@mui/material";
 
 const Home = () => {
   return (

@@ -4,7 +4,10 @@ import bgImg from "../assets/sushi.jpeg";
 
 const About = () => {
   return (
-    <div className="main">
+    <Box sx={{
+        width: "100%",
+        height: "100vh",
+    }}>
       <div className="overlay"></div>
       <Box
         sx={{
@@ -25,13 +28,13 @@ const About = () => {
             borderRadius: "2.5%"
           }}
         >
-          <Grid container padding={"5% 10%"} textAlign="center">
+          <Grid container padding={"2% 10% 2% 10%"} textAlign="center">
             <Grid item xs={12}>
               <Box display="flex" justifyContent="center" alignItems="center">
                 <Typography variant="h2"> Itadakimasu</Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} mt={4}>
+            <Grid item xs={12} mt={2}>
               <Box
                 display="flex"
                 flexDirection="column"
@@ -57,7 +60,7 @@ const About = () => {
           </Grid>
         </Container>
       </div>
-    </div>
+    </Box>
   );
 };
 
