@@ -11,6 +11,7 @@ const GalleryContent = (props) => {
             srcSet={`${item.src}`}
             alt={item.title}
             loading="lazy"
+            onLoad={() => props.setLoadCount(prev => prev + 1)}
           />
         </ImageListItem>
       ))}
