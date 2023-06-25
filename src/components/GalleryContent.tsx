@@ -51,7 +51,7 @@ const GalleryContent = (props: { images: Restaurant[] }) => {
                     alignItems="center"
                   >
                     <Typography variant="caption">
-                      {`Date ${item.date.substring(0,4)}/${item.date.substring(4, 6)}/${item.date.substring(6)}`}
+                      {`Date - ${item.date.substring(0,4)}/${item.date.substring(4, 6)}/${item.date.substring(6)}`}
                     </Typography>
                   </Box>
                 </Grid>
