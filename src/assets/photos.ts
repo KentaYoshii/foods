@@ -1,9 +1,69 @@
 export interface ImageType {
-  src: String;
+  key: String;
   title: String;
 }
 
+export interface Restaurant {
+  name: string;
+  date: string;
+  thumbnail: string;
+  numImages: number;
+  location: string;
+  tags: string[];
+}
+
 export const perPage = 5;
+
+export const restaurants: Restaurant[] = [
+  {
+    name: "Tokyo Tojan Seikatsu",
+    date: "20220618",
+    thumbnail: "tokyo_tojan_seikatsu_1.jpeg",
+    numImages: 4,
+    location: "Shinagawa-Ku, Tokyo",
+    tags: ["Taiwanese"]
+  },
+  {
+    name: "T.Y. Harbor",
+    date: "20220618",
+    thumbnail: "t.y._harbor_1.jpeg",
+    numImages: 5,
+    location: "Shinagawa-Ku, Tokyo",
+    tags: ["American"]
+  },
+  {
+    name: "Yakiniku Masan",
+    date: "20220616",
+    thumbnail: "yakiniku_masan_1.jpeg",
+    numImages: 3,
+    location: "Shinagawa-Ku, Tokyo",
+    tags: ["Korean"]
+  },
+  {
+    name: "Moana Kitchen Cafe",
+    date: "20220530",
+    thumbnail: "moana_kitchen_cafe_1.jpeg",
+    numImages: 2,
+    location: "Shibuya-Ku, Tokyo",
+    tags: ["Hawaiian"]
+  },
+  {
+    name: "Bills",
+    date: "20220528",
+    thumbnail: "bills_1.jpeg",
+    numImages: 3,
+    location: "Shibuya-Ku, Tokyo",
+    tags: ["Western"]
+  },
+  {
+    name: "El Caliente",
+    date: "20220528",
+    thumbnail: "el_caliente_1.jpeg",
+    numImages: 3,
+    location: "Minato-Ku, Tokyo",
+    tags: ["Mexican"]
+  },
+]
 
 export const photos = [
     {
@@ -52,4 +112,4 @@ export const photos = [
     }
   ];
   
-  export const numImages = photos.length
+  export const numRs = restaurants.length

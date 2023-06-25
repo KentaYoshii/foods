@@ -1,74 +1,111 @@
-import { Container, Box, Grid, Pagination, Grow } from "@mui/material";
+import {
+  Container,
+  Box,
+  Grid,
+  Pagination,
+  Grow,
+  LinearProgress,
+} from "@mui/material";
 import GalleryContent from "../components/GalleryContent";
 import IconLabelTabs from "../components/Tabs";
 import React, { useState, useEffect } from "react";
-import { photos, numImages, perPage } from "../assets/photos";
+import { photos, numRs, perPage, Restaurant } from "../assets/photos";
+import { listObjects } from "../utils/s3_helper";
+import { getRs } from "../utils/helper";
 
 const Gallery = () => {
-  const [images, setImages] = useState(photos.slice(0, perPage));
+  // State
+  const [images, setImages] = useState<Restaurant[]>([]);
   const [currPage, setCurrPage] = useState(1);
   const [ready, setReady] = useState(false);
-  const [loadCount, setLoadCount] = useState(0);
-  useEffect(() => {
-    if (loadCount === perPage) {
-        setReady(true);
-    }
-  }, [loadCount])
+  const tkyPgCnt = Math.ceil(numRs / perPage);
 
-  const tkyPgCnt = Math.ceil(numImages / perPage);
-  const onPageChange = (e: React.ChangeEvent<unknown>, page: number) => {
+  useEffect(() => {
+    getRs(0, perPage, "JPN").then((res) => {
+      setImages(res);
+      setReady(true);
+    });
+  }, []);
+
+  // Helper
+  const toTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const onPageChange = async (e: React.ChangeEvent<unknown>, page: number) => {
     if (page === currPage) {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        })
-        return;
+      toTop();
+      return;
     }
     setCurrPage(page);
     setReady(false);
-    setLoadCount(0);
     const startIdx = page * perPage - perPage;
     const endIdx = startIdx + perPage;
-    setImages(photos.slice(startIdx, endIdx));
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    const res = await getRs(startIdx, endIdx, "JPN");
+    setImages(res);
+    setReady(true);
+    toTop();
   };
+
+  // Loading State
+  if (ready === false) {
+    return (
+      <>
+        <div className="overlay"></div>
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+          }}
+        >
+          <LinearProgress />
+        </Box>
+      </>
+    );
+  }
   return (
     <Box>
-      <Container
-        sx={{
-          width: "100%",
-          marginTop: "13vh",
-        }}
+      <Grow
+        in={ready}
+        style={{ transformOrigin: "0 0 0" }}
+        {...(ready ? { timeout: 2500 } : {})}
       >
-        <Grid container>
-          <Grid item xs={12}>
-            <Box alignItems="center" display="flex" justifyContent="center">
-              <IconLabelTabs />
-            </Box>
+        <Container
+          sx={{
+            width: "100%",
+            marginTop: "15vh",
+          }}
+        >
+          <Grid container>
+            <Grid item xs={12}>
+              <Box alignItems="center" display="flex" justifyContent="center">
+                <IconLabelTabs />
+              </Box>
+            </Grid>
+            <Grid item xs={12} mt={3}>
+              <Box alignItems="center" display="flex" justifyContent="center">
+                <GalleryContent images={images} />
+              </Box>
+            </Grid>
+            <Grid item xs={12} mt={5} mb={5}>
+              <Box alignItems="center" display="center" justifyContent="center">
+                <Pagination
+                  variant="outlined"
+                  count={tkyPgCnt}
+                  color="standard"
+                  shape="circular"
+                  sx={{}}
+                  onChange={onPageChange}
+                />
+              </Box>
+            </Grid>
           </Grid>
-          <Grid item xs={12} mt={3}>
-            <Box alignItems="center" display="flex" justifyContent="center">
-              <GalleryContent images={images} setLoadCount={setLoadCount}/>
-            </Box>
-          </Grid>
-          <Grid item xs={12} mt={5} mb={5}>
-            <Box alignItems="center" display="center" justifyContent="center">
-              <Pagination
-                variant="outlined"
-                count={tkyPgCnt}
-                color="standard"
-                shape="circular"
-                sx={{
-                }}
-                onChange={onPageChange}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Grow>
     </Box>
   );
 };
