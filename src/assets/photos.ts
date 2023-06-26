@@ -10,6 +10,7 @@ export interface Restaurant {
   numImages: number;
   location: string;
   tags: string[];
+  website: string;
 }
 
 export const perPage = 5;
@@ -21,7 +22,8 @@ export const restaurants: Restaurant[] = [
     thumbnail: "tokyo_tojan_seikatsu_1.jpeg",
     numImages: 4,
     location: "Shinagawa-Ku, Tokyo",
-    tags: ["Taiwanese"]
+    tags: ["Taiwanese"],
+    website: "https://twitter.com/Tokyodoujan",
   },
   {
     name: "T.Y. Harbor",
@@ -29,7 +31,8 @@ export const restaurants: Restaurant[] = [
     thumbnail: "t.y._harbor_1.jpeg",
     numImages: 5,
     location: "Shinagawa-Ku, Tokyo",
-    tags: ["American"]
+    tags: ["American"],
+    website: "https://www.tysons.jp/tyharbor/",
   },
   {
     name: "Yakiniku Masan",
@@ -37,7 +40,8 @@ export const restaurants: Restaurant[] = [
     thumbnail: "yakiniku_masan_1.jpeg",
     numImages: 3,
     location: "Shinagawa-Ku, Tokyo",
-    tags: ["Korean"]
+    tags: ["Korean"],
+    website: "",
   },
   {
     name: "Moana Kitchen Cafe",
@@ -45,7 +49,8 @@ export const restaurants: Restaurant[] = [
     thumbnail: "moana_kitchen_cafe_1.jpeg",
     numImages: 2,
     location: "Shibuya-Ku, Tokyo",
-    tags: ["Hawaiian"]
+    tags: ["Hawaiian"],
+    website: "http://www.rincrew.co.jp/moana/",
   },
   {
     name: "Bills",
@@ -53,7 +58,8 @@ export const restaurants: Restaurant[] = [
     thumbnail: "bills_1.jpeg",
     numImages: 3,
     location: "Shibuya-Ku, Tokyo",
-    tags: ["Western"]
+    tags: ["Western"],
+    website: "https://billsjapan.com/en/omotesando",
   },
   {
     name: "El Caliente",
@@ -61,7 +67,8 @@ export const restaurants: Restaurant[] = [
     thumbnail: "el_caliente_1.jpeg",
     numImages: 3,
     location: "Minato-Ku, Tokyo",
-    tags: ["Mexican"]
+    tags: ["Mexican"],
+    website: "https://www.huge.co.jp/restaurant/modern-mexicano/elcaliente",
   },
 ]
 
