@@ -12,17 +12,23 @@ import {
   CardActionArea,
   Modal,
 } from "@mui/material";
+import loading from "../assets/loading.gif";
 import { getRImages } from "../utils/helper";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const GalleryContent = (props: { images: Restaurant[] }) => {
+const GalleryContent = (props: {
+  images: Restaurant[];
+  load: Array<boolean>;
+  setLoad: (n: Array<boolean>) => void;
+}) => {
   const theme = useTheme();
   const sm = useMediaQuery(theme.breakpoints.up("sm"));
   const md = useMediaQuery(theme.breakpoints.up("md"));
   const [rModal, setRModal] = useState<Restaurant>();
   const [rModalImgs, setRModalImgs] = useState<string[]>();
   const [open, setOpen] = useState(false);
+  // const [load, setLoad] = useState(new Array(perPage).fill(false));
   const handleOpen = (r: Restaurant) => {
     setRModal(r);
     getRImages(r).then((imgs) => {
@@ -64,11 +70,20 @@ const GalleryContent = (props: { images: Restaurant[] }) => {
                 }}
               >
                 <CardHeader title={item.name} subheader={item.location} />
+                {props.load[idx] === false && (
+                  <CardMedia component="img" image={loading} sx={{
+                    maxHeight: "200px",
+                  }}/>
+                )}
                 <CardMedia
                   component="img"
                   image={item.thumbnail}
                   sx={{
-                    maxHeight: "200px",
+                    maxHeight: props.load[idx] ? "200px" : "0px",
+                  }}
+                  onLoad={() => {
+                    props.load[idx] = true;
+                    props.setLoad([...props.load]);
                   }}
                 />
               </CardActionArea>
@@ -95,19 +110,25 @@ const GalleryContent = (props: { images: Restaurant[] }) => {
                       </Typography>
                     </Box>
                   </Grid>
-                    <Grid item mt={2}>
-                      <Box display="flex" justifyContent="center" alignItems="center">
-                        {item.website !== "" ? (
-                          <Link underline="none" target="_blank" href={item.website}>
-                            Website
-                          </Link>
-                        ) : (
-                          <Typography variant="caption">
-                            Hidden gem 😉
-                          </Typography>
-                        )}
-                      </Box>
-                    </Grid>
+                  <Grid item mt={2}>
+                    <Box
+                      display="flex"
+                      justifyContent="center"
+                      alignItems="center"
+                    >
+                      {item.website !== "" ? (
+                        <Link
+                          underline="none"
+                          target="_blank"
+                          href={item.website}
+                        >
+                          Website
+                        </Link>
+                      ) : (
+                        <Typography variant="caption">Hidden gem 😉</Typography>
+                      )}
+                    </Box>
+                  </Grid>
                 </Grid>
               </CardContent>
             </Card>

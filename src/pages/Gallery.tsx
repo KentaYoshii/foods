@@ -18,12 +18,17 @@ const Gallery = () => {
   const [currPage, setCurrPage] = useState(1);
   const [ready, setReady] = useState(false);
   const [region, setRegion] = useState(0);
+  const [load, setLoad] = useState(new Array(perPage).fill(false));
+
   const tkyPgCnt = Math.ceil(numRs / perPage);
   const gPgCnt = Math.ceil(numGRs / perPage);
 
   useEffect(() => {
+    setReady(false);
+    setImages([])
     getRs(0, perPage, region).then((res) => {
       setImages(res);
+      setLoad(new Array(perPage).fill(false))
       setCurrPage(1);
       setReady(true);
     });
@@ -44,11 +49,13 @@ const Gallery = () => {
     }
     setCurrPage(page);
     setReady(false);
+    setImages([]);
     const startIdx = page * perPage - perPage;
     const endIdx = startIdx + perPage;
     const res = await getRs(startIdx, endIdx, region);
     toTop();
     setImages(res);
+    setLoad(new Array(perPage).fill(false))
     setReady(true);
   };
 
@@ -66,21 +73,11 @@ const Gallery = () => {
               <IconLabelTabs setRegion={setRegion} region={region} />
             </Box>
           </Grid>
-          {!ready && (
-            <Box
-              sx={{
-                width: "100%",
-                height: "100%",
-              }}
-            >
-              <LinearProgress />
-            </Box>
-          )}
           <Grow in={ready} {...(ready ? { timeout: 2500 } : {})}>
             <Grid container>
               <Grid item xs={12} mt={3}>
                 <Box alignItems="center" display="flex" justifyContent="center">
-                  <GalleryContent images={images} />
+                  <GalleryContent images={images} load={load} setLoad={setLoad}/>
                 </Box>
               </Grid>
             </Grid>
