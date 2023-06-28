@@ -1,21 +1,17 @@
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
-import { Avatar } from "@mui/material";
 import Tab from "@mui/material/Tab";
 import { GiJapan, GiWorld } from "react-icons/gi"
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import jpn from "../assets/fuji.svg";
 
-export default function IconLabelTabs() {
-  const [value, setValue] = React.useState(0);
+export default function IconLabelTabs(props: {setRegion: (r: number) => void, region: number}) {
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
+    props.setRegion(newValue);
   };
 
   return (
     <Tabs
-      value={value}
+      value={props.region}
       onChange={handleChange}
       aria-label="icon label tabs example"
       sx={{

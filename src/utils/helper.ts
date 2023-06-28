@@ -1,20 +1,23 @@
-import { Restaurant, restaurants } from "../assets/photos";
+import { Restaurant, restaurants, globalRestaurants } from "../assets/photos";
 import { getPresignedURLs, getThumbnailPresignURLs } from "./s3_helper";
 
 const getRBaseKey = (name: string) => {
-    const l = name.toLowerCase();
-    return l.split(' ').join('_');
-}
+  const l = name.toLowerCase();
+  return l.split(" ").join("_");
+};
 
 export const getRestaurantInRange = (
   begin: number,
   end: number,
-  region: string
+  region: number
 ) => {
-  return restaurants.slice(begin, end);
+  if (!region) {
+    return restaurants.slice(begin, end);
+  }
+  return globalRestaurants.slice(begin, end);
 };
 
-export const getRs = async (begin: number, end: number, region: string) => {
+export const getRs = async (begin: number, end: number, region: number) => {
   const rs = getRestaurantInRange(begin, end, region);
   const res_rs = await getThumbnailPresignURLs(rs);
   return res_rs;
@@ -32,7 +35,7 @@ export const getRImageKeys = (r: Restaurant) => {
 };
 
 export const getRImages = async (r: Restaurant) => {
-    const imgKs = getRImageKeys(r);
-    const imgs = await getPresignedURLs(imgKs);
-    return imgs;
-}
+  const imgKs = getRImageKeys(r);
+  const imgs = await getPresignedURLs(imgKs);
+  return imgs;
+};

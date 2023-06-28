@@ -16,7 +16,6 @@ import { getRImages } from "../utils/helper";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-
 const GalleryContent = (props: { images: Restaurant[] }) => {
   const theme = useTheme();
   const sm = useMediaQuery(theme.breakpoints.up("sm"));
@@ -42,7 +41,7 @@ const GalleryContent = (props: { images: Restaurant[] }) => {
     top: "50%",
     left: "50%",
     minWidth: sm ? "50%" : "80%",
-    minHeight: "auto",
+    // minHeight: "auto",
     transform: "translate(-50%, -50%)",
     bgcolor: "background.paper",
     boxShadow: 24,
@@ -72,58 +71,61 @@ const GalleryContent = (props: { images: Restaurant[] }) => {
                     maxHeight: "200px",
                   }}
                 />
-                <CardContent>
-                  <Grid container justifyContent="space-evenly">
-                    {item.tags.map((tag, idx) => (
-                      <Grid item key={idx}>
-                        <Chip label={tag} />
-                      </Grid>
-                    ))}
-                    <Grid item xs={12} mt={2}>
-                      <Box
-                        display="flex"
-                        justifyContent="center"
-                        alignItems="center"
-                      >
-                        <Typography variant="caption">
-                          {`Date - ${item.date.substring(
-                            0,
-                            4
-                          )}/${item.date.substring(4, 6)}/${item.date.substring(
-                            6
-                          )}`}
-                        </Typography>
+              </CardActionArea>
+              <CardContent>
+                <Grid container justifyContent="space-evenly">
+                  {item.tags.map((tag, idx) => (
+                    <Grid item key={idx}>
+                      <Chip label={tag} />
+                    </Grid>
+                  ))}
+                  <Grid item xs={12} mt={2}>
+                    <Box
+                      display="flex"
+                      justifyContent="center"
+                      alignItems="center"
+                    >
+                      <Typography variant="caption">
+                        {`Date - ${item.date.substring(
+                          0,
+                          4
+                        )}/${item.date.substring(4, 6)}/${item.date.substring(
+                          6
+                        )}`}
+                      </Typography>
+                    </Box>
+                  </Grid>
+                    <Grid item mt={2}>
+                      <Box display="flex" justifyContent="center" alignItems="center">
+                        {item.website !== "" ? (
+                          <Link underline="none" target="_blank" href={item.website}>
+                            Website
+                          </Link>
+                        ) : (
+                          <Typography variant="caption">
+                            Hidden gem 😉
+                          </Typography>
+                        )}
                       </Box>
                     </Grid>
-                    <Grid item mt={2}>
-                      {item.website !== "" ? (
-                        <Link underline="none" target="_blank">Website</Link>
-                      ) : (
-                        <Typography variant="caption">Hidden gem 😉</Typography>
-                      )}
-                    </Grid>
-                  </Grid>
-                </CardContent>
-              </CardActionArea>
+                </Grid>
+              </CardContent>
             </Card>
           </ImageListItem>
         ))}
       </ImageList>
       {rModal && rModalImgs && (
-        <Modal
-          open={open}
-          onClose={handleClose}
-          sx={{
-            width: "100%",
-            height: "100vh",
-          }}
-          
-        >
+        <Modal open={open} onClose={handleClose}>
           <Box sx={style}>
-            <Carousel showThumbs={false} width="100%">
+            <Carousel showThumbs={false} width="inherit">
               {rModalImgs.map((img, idx) => (
-                <Box key={idx} width="100%">
-                    <img src={img}/>
+                <Box key={idx}>
+                  <Box
+                    component="img"
+                    src={img}
+                    maxWidth={"80vw"}
+                    maxHeight={"80vh"}
+                  />
                 </Box>
               ))}
             </Carousel>

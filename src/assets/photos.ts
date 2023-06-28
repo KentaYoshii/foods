@@ -13,9 +13,117 @@ export interface Restaurant {
   website: string;
 }
 
-export const perPage = 5;
+export const perPage = 6;
 
 export const restaurants: Restaurant[] = [
+  {
+    name: "Chez Tomo Ginza",
+    date: "20230122",
+    thumbnail: "chez_tomo_ginza_1.jpeg",
+    numImages: 9,
+    location: "Chuo-Ku, Tokyo",
+    tags: ["French"],
+    website: "http://www.chez-tomo.com/",
+  },
+  {
+    name: "Momobukuro",
+    date: "20230122",
+    thumbnail: "momobukuro_1.jpeg",
+    numImages: 2,
+    location: "Toshima-Ku, Tokyo",
+    tags: ["Parfait"],
+    website: "https://risotteria-gaku.net",
+  },
+  {
+    name: "Path",
+    date: "20230122",
+    thumbnail: "path_1.jpeg",
+    numImages: 2,
+    location: "Shibuya-Ku, Tokyo",
+    tags: ["French"],
+    website: "https://tabelog.com/en/tokyo/A1318/A131810/13190786/",
+  },
+  {
+    name: "Tofu Shokudo",
+    date: "20230110",
+    thumbnail: "tofu_shokudo_1.jpeg",
+    numImages: 3,
+    location: "Shibuya-Ku, Tokyo",
+    tags: ["Japanese"],
+    website: "https://tofushokudo.com/en/",
+  },
+  {
+    name: "Smokehouse",
+    date: "20220821",
+    thumbnail: "smokehouse_1.jpeg",
+    numImages: 3,
+    location: "Shibuya-Ku, Tokyo",
+    tags: ["American"],
+    website: "https://www.tysons.jp/smokehouse/",
+  },
+  {
+    name: "Yakiniku Koyo",
+    date: "20220720",
+    thumbnail: "yakiniku_koyo_1.jpeg",
+    numImages: 2,
+    location: "Shinagawa-Ku, Tokyo",
+    tags: ["Korean"],
+    website: "https://tabelog.com/tokyo/A1316/A131604/13020181/",
+  },
+  {
+    name: "CICADA",
+    date: "20220719",
+    thumbnail: "cicada_1.jpeg",
+    numImages: 6,
+    location: "Minato-Ku, Tokyo",
+    tags: ["Mediterranean"],
+    website: "https://www.tysons.jp/cicada/en/",
+  },
+  {
+    name: "Kooriya Peace",
+    date: "20220718",
+    thumbnail: "kooriya_peace_1.jpeg",
+    numImages: 3,
+    location: "Musashino-Ku, Tokyo",
+    tags: ["Japanese"],
+    website: "https://twitter.com/kooriya_peace",
+  },
+  {
+    name: "Yakun",
+    date: "20220711",
+    thumbnail: "yakun_1.jpeg",
+    numImages: 2,
+    location: "Shinjuku-Ku, Tokyo",
+    tags: ["Singaporean"],
+    website: "https://yakun.jp/",
+  },
+  {
+    name: "Tim Ho Wan",
+    date: "20220705",
+    thumbnail: "tim_ho_wan_1.jpeg",
+    numImages: 3,
+    location: "Shinjuku-Ku, Tokyo",
+    tags: ["Chinese"],
+    website: "https://timhowan.jp/en/",
+  },
+  {
+    name: "Pancake House",
+    date: "20220702",
+    thumbnail: "pancake_house_1.jpeg",
+    numImages: 2,
+    location: "Musashino-Ku, Tokyo",
+    tags: ["Western"],
+    website: "http://pancake-house.jp/kichijyoji-food/",
+  },
+  {
+    name: "Tsukumi",
+    date: "20220623",
+    thumbnail: "tsukumi_1.jpeg",
+    numImages: 2,
+    location: "Suginami-Ku, Tokyo",
+    tags: ["Japanese"],
+    website: "https://byo.co.jp/tsukumi/",
+  },
   {
     name: "Tokyo Tojan Seikatsu",
     date: "20220618",
@@ -35,6 +143,15 @@ export const restaurants: Restaurant[] = [
     website: "https://www.tysons.jp/tyharbor/",
   },
   {
+    name: "Janai Coffee",
+    date: "20220617",
+    thumbnail: "janai_coffee_1.jpeg",
+    numImages: 3,
+    location: "Shibuya-Ku, Tokyo",
+    tags: ["American"],
+    website: "https://janaicoffee.tokyo/",
+  },
+  {
     name: "Yakiniku Masan",
     date: "20220616",
     thumbnail: "yakiniku_masan_1.jpeg",
@@ -42,6 +159,24 @@ export const restaurants: Restaurant[] = [
     location: "Shinagawa-Ku, Tokyo",
     tags: ["Korean"],
     website: "",
+  },
+  {
+    name: "Ivy Place",
+    date: "20220611",
+    thumbnail: "ivy_place_1.jpeg",
+    numImages: 2,
+    location: "Shibuya-Ku, Tokyo",
+    tags: ["Western"],
+    website: "https://www.tysons.jp/ivyplace/en/",
+  },
+  {
+    name: "Good Cheese Good Pizza",
+    date: "20220608",
+    thumbnail: "good_cheese_good_pizza_1.jpeg",
+    numImages: 2,
+    location: "Chiyoda-Ku, Tokyo",
+    tags: ["Italian"],
+    website: "https://goodcheesegoodpizza.com/",
   },
   {
     name: "Moana Kitchen Cafe",
@@ -62,6 +197,15 @@ export const restaurants: Restaurant[] = [
     website: "https://billsjapan.com/en/omotesando",
   },
   {
+    name: "Los Angeles Balcony",
+    date: "20220527",
+    thumbnail: "los_angeles_balcony_1.jpeg",
+    numImages: 3,
+    location: "Shinagawa-Ku, Tokyo",
+    tags: ["American"],
+    website: "https://www.los-angeles-balcony.com/restaurant.html",
+  },
+  {
     name: "El Caliente",
     date: "20220528",
     thumbnail: "el_caliente_1.jpeg",
@@ -70,53 +214,91 @@ export const restaurants: Restaurant[] = [
     tags: ["Mexican"],
     website: "https://www.huge.co.jp/restaurant/modern-mexicano/elcaliente",
   },
-]
+];
 
-export const photos = [
-    {
-      src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
-      title: "foo"
-    },
-    {
-      src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
-      title: "foo"
-    },
-    {
-      src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
-      title: "foo"
-    },
-    {
-      src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
-      title: "foo"
-    },
-    {
-      src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
-      title: "foo"
-    },
-    {
-      src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
-      title: "foo"
-    },
-    {
-      src: "https://source.unsplash.com/zh7GEuORbUw/600x799",
-      title: "foo"
-    },
-    {
-      src: "https://source.unsplash.com/PpOHJezOalU/800x599",
-      title: "foo"
-    },
-    {
-      src: "https://source.unsplash.com/I1ASdgphUH4/800x599",
-      title: "foo"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8fDA%3D&w=1000&q=80",
-      title: "foo"
-    },
-    {
-      src: "https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg",
-      title: "foo"
-    }
-  ];
-  
-  export const numRs = restaurants.length
+export const globalRestaurants: Restaurant[] = [
+  {
+    name: "The River Social",
+    date: "20221126",
+    thumbnail: "the_river_social_1.jpeg",
+    location: "Providence, RI, USA",
+    numImages: 3,
+    tags: ["International"],
+    website: "https://www.theriversocial.com/",
+  },
+  {
+    name: "Ganko Ittetsu Ramen",
+    date: "20221120",
+    thumbnail: "ganko_ittetsu_ramen_1.jpeg",
+    location: "Providence, RI, USA",
+    numImages: 3,
+    tags: ["Japanese"],
+    website: "https://gankoramen.com/",
+  },
+  {
+    name: "Dolores",
+    date: "20221119",
+    thumbnail: "dolores_1.jpeg",
+    location: "Providence, RI, USA",
+    numImages: 4,
+    tags: ["Mexican"],
+    website: "https://www.dolorespvd.com/",
+  },
+  {
+    name: "Providence Donut",
+    date: "20220925",
+    thumbnail: "providence_donut_1.jpeg",
+    location: "Providence, RI, USA",
+    numImages: 3,
+    tags: ["American"],
+    website: "https://www.pvdonuts.com/",
+  },
+  {
+    name: "Persimmon",
+    date: "20220921",
+    thumbnail: "persimmon_1.jpeg",
+    location: "Providence, RI, USA",
+    numImages: 7,
+    tags: ["New American"],
+    website: "http://www.persimmonri.com/",
+  },
+  {
+    name: "Louis Family Restaurant",
+    date: "20220904",
+    thumbnail: "louis_family_restaurant_1.jpeg",
+    location: "Providence, RI, USA",
+    numImages: 2,
+    tags: ["American"],
+    website: "https://www.louisrestaurant.org/",
+  },
+  {
+    name: "Nami",
+    date: "20220501",
+    thumbnail: "nami_1.jpeg",
+    numImages: 3,
+    location: "Providence, RI, USA",
+    tags: ["Japanese"],
+    website: "https://namiprov.com/",
+  },
+  {
+    name: "Mokban Korean Bistro",
+    date: "20220319",
+    thumbnail: "mokban_korean_bistro_1.jpeg",
+    numImages: 4,
+    location: "Providence, RI, USA",
+    tags: ["Korean"],
+    website: "https://www.mokban.com/",
+  },
+  {
+    name: "Den Den Korean Fried Chicken",
+    date: "20220310",
+    thumbnail: "den_den_korean_fried_chicken_1.jpeg",
+    numImages: 7,
+    location: "Providence, RI, USA",
+    tags: ["Korean"],
+    website: "https://www.dendenhospitality.com/dendenfriedchicken",
+  },
+];
+
+export const numRs = restaurants.length;
+export const numGRs = globalRestaurants.length;
