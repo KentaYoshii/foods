@@ -1,7 +1,6 @@
 import { Route, Routes, Outlet, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
-import About from "./pages/About";
 import Header from "./components/Header";
 import "./App.css";
 
@@ -20,7 +19,6 @@ function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="about" element={<About />} />
         <Route path="gallery" element={<Gallery />} />
         <Route path="/" element={<Home />} />
       </Route>

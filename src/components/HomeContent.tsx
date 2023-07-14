@@ -13,7 +13,7 @@ const HomeContent = () => {
               textUnderlineOffset: "15px",
             }}
           >
-            Itadakimasu
+            HaruYoshiEats
           </Typography>
         </Box>
       </Grid>

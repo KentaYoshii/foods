@@ -21,29 +21,6 @@ const Header = (props: { current: string }) => {
                     </button>
                   </li>
                   <li>
-                    <button className="headerA2" onClick={() => transitionNavigate("/about", "slide-to-left")}>
-                      About
-                    </button>
-                  </li>
-                  <li>
-                    <button className="headerA2" onClick={() => transitionNavigate("/gallery", "slide-to-left")}>
-                      Gallery
-                    </button>
-                  </li>
-                </ul>
-              ) : props.current === "/about" ? (
-                <ul className="headerUL">
-                  <li>
-                    <button className="headerA2" onClick={() => transitionNavigate("/", "slide-to-right")}>
-                      Home
-                    </button>
-                  </li>
-                  <li>
-                    <button className="headerA" onClick={() => transitionNavigate("/about")}>
-                      About
-                    </button>
-                  </li>
-                  <li>
                     <button className="headerA2" onClick={() => transitionNavigate("/gallery", "slide-to-left")}>
                       Gallery
                     </button>
@@ -54,11 +31,6 @@ const Header = (props: { current: string }) => {
                   <li>
                     <button className="headerA2" onClick={() => transitionNavigate("/", "slide-to-right")}>
                       Home
-                    </button>
-                  </li>
-                  <li>
-                    <button className="headerA2" onClick={() => transitionNavigate("/about", "slide-to-right")}>
-                      About
                     </button>
                   </li>
                   <li>
