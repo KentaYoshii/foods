@@ -4,7 +4,6 @@ import {
   Grid,
   Pagination,
   Grow,
-  LinearProgress,
 } from "@mui/material";
 import GalleryContent from "../components/GalleryContent";
 import IconLabelTabs from "../components/Tabs";
@@ -85,12 +84,11 @@ const Gallery = () => {
           <Grid item xs={12} mt={5} mb={5}>
             <Box alignItems="center" display="center" justifyContent="center">
               <Pagination
-                variant="outlined"
                 count={region === 0 ? tkyPgCnt : gPgCnt}
-                color="standard"
-                shape="circular"
-                sx={{}}
                 onChange={onPageChange}
+                showFirstButton
+                showLastButton
+                siblingCount={0}
               />
             </Box>
           </Grid>

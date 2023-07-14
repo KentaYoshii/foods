@@ -1,9 +1,11 @@
 import { useState } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import { Box, CardContent, Chip, Grid, Link, Typography } from "@mui/material";
+import { Box, CardContent, Grid, IconButton, Typography } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { GrCircleInformation } from "react-icons/gr";
+import { CgUnavailable } from "react-icons/cg";
 import { Restaurant } from "../assets/photos";
 import {
   Card,
@@ -64,16 +66,80 @@ const GalleryContent = (props: {
         {props.images.map((item, idx) => (
           <ImageListItem key={idx}>
             <Card sx={{ maxWidth: "100%" }} variant={"outlined"}>
+              <CardHeader
+                title={
+                  <Grid container mb={1}>
+                    <Grid item xs={8} paddingTop={0.5}>
+                      <Box
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="left"
+                      >
+                        <Typography variant="h6">{item.name}</Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={4}>
+                      <Box
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="right"
+                      >
+                        {item.website === "" ? (
+                          <IconButton disabled>
+                            <CgUnavailable />
+                          </IconButton>
+                        ) : (
+                          <IconButton href={item.website} target="_blank">
+                            <GrCircleInformation />
+                          </IconButton>
+                        )}
+                      </Box>
+                    </Grid>
+                  </Grid>
+                }
+                subheader={
+                  <Grid container>
+                    <Grid item xs={6}>
+                      <Box
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="left"
+                      >
+                        <Typography variant="caption">
+                          {item.location}
+                        </Typography>
+                      </Box>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Box
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="right"
+                      >
+                        <Typography variant="caption">{`${item.date.substring(
+                          0,
+                          4
+                        )}/${item.date.substring(4, 6)}/${item.date.substring(
+                          6
+                        )}`}</Typography>
+                      </Box>
+                    </Grid>
+                  </Grid>
+                }
+              />
               <CardActionArea
                 onClick={() => {
                   handleOpen(item);
                 }}
               >
-                <CardHeader title={item.name} subheader={item.location} />
                 {props.load[idx] === false && (
-                  <CardMedia component="img" image={loading} sx={{
-                    maxHeight: "200px",
-                  }}/>
+                  <CardMedia
+                    component="img"
+                    image={loading}
+                    sx={{
+                      maxHeight: "200px",
+                    }}
+                  />
                 )}
                 <CardMedia
                   component="img"
@@ -89,44 +155,15 @@ const GalleryContent = (props: {
               </CardActionArea>
               <CardContent>
                 <Grid container justifyContent="space-evenly">
-                  {item.tags.map((tag, idx) => (
-                    <Grid item key={idx}>
-                      <Chip label={tag} />
-                    </Grid>
-                  ))}
-                  <Grid item xs={12} mt={2}>
+                  <Grid item mt={1}>
                     <Box
                       display="flex"
                       justifyContent="center"
                       alignItems="center"
                     >
-                      <Typography variant="caption">
-                        {`Date - ${item.date.substring(
-                          0,
-                          4
-                        )}/${item.date.substring(4, 6)}/${item.date.substring(
-                          6
-                        )}`}
+                      <Typography variant="body2">
+                          {item.tags[0]}
                       </Typography>
-                    </Box>
-                  </Grid>
-                  <Grid item mt={2}>
-                    <Box
-                      display="flex"
-                      justifyContent="center"
-                      alignItems="center"
-                    >
-                      {item.website !== "" ? (
-                        <Link
-                          underline="none"
-                          target="_blank"
-                          href={item.website}
-                        >
-                          Website
-                        </Link>
-                      ) : (
-                        <Typography variant="caption">Hidden gem 😉</Typography>
-                      )}
                     </Box>
                   </Grid>
                 </Grid>

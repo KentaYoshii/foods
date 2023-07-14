@@ -17,12 +17,48 @@ export const perPage = 6;
 
 export const restaurants: Restaurant[] = [
   {
+    name: "Taiwan Ten Cafe",
+    date: "20230708",
+    thumbnail: "taiwan_ten_cafe_1.jpeg",
+    numImages: 2,
+    location: "Shinjuku-Ku, Tokyo",
+    tags: ["#Taiwanese dinner before Indiana Jones!"],
+    website: "https://taiwan-ten.com/",
+  },
+  {
+    name: "crisscross",
+    date: "20230708",
+    thumbnail: "crisscross_1.jpeg",
+    numImages: 1,
+    location: "Minato-Ku, Tokyo",
+    tags: ["#Melon Pancake ❤️️"],
+    website: "https://www.strings-hotel.jp/omotesando/restaurant/tavern/",
+  },
+  {
+    name: "Tavern by the Green",
+    date: "20230701",
+    thumbnail: "tavern_by_the_green_1.jpeg",
+    numImages: 5,
+    location: "Minato-Ku, Tokyo",
+    tags: ["#Our First Afternoon Tea 😋"],
+    website: "https://www.strings-hotel.jp/omotesando/restaurant/tavern/",
+  },
+  {
+    name: "Amam Dacotan",
+    date: "20230701",
+    thumbnail: "amam_dacotan_1.jpeg",
+    numImages: 4,
+    location: "Minato-Ku, Tokyo",
+    tags: ["#BEST Bread Ever 🥖"],
+    website: "https://amamdacotan.com/",
+  },
+  {
     name: "Tobiccho",
     date: "20230624",
     thumbnail: "tobiccho_1.jpeg",
     numImages: 2,
     location: "Enoshima, Kanagawa",
-    tags: ["Japanese"],
+    tags: ["#Kaisendon"],
     website: "http://tobiccho.com/",
   },
   {
@@ -31,7 +67,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "komachi_street_1.jpeg",
     numImages: 7,
     location: "Kamakura, Kanagawa",
-    tags: ["Japanese"],
+    tags: ["#Tabearuki"],
     website: "https://www.japan.travel/en/spot/1586/",
   },
   {
@@ -40,7 +76,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "benitsuru_1.jpeg",
     numImages: 2,
     location: "Taito-Ku, Tokyo",
-    tags: ["American"],
+    tags: ["#BEST Pancakes Ever 🥞"],
     website: "https://www.facebook.com/profile.php?id=100036174444589&ref=br_rs",
   },
   {
@@ -49,7 +85,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "vietnam_festival_1.jpeg",
     numImages: 4,
     location: "Shibuya-Ku, Tokyo",
-    tags: ["Vietnamese"],
+    tags: ["#Food Festival!"],
     website: "http://www.vietnamfes.net/",
   },
   {
@@ -58,7 +94,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "loncafe_1.jpeg",
     numImages: 2,
     location: "Meguro-Ku, Tokyo",
-    tags: ["American"],
+    tags: ["#sweet & savory french toast"],
     website: "https://loncafe.jp/",
   },
   {
@@ -67,7 +103,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "tototo_1.jpeg",
     numImages: 3,
     location: "Nakano-Ku, Tokyo",
-    tags: ["Italian"],
+    tags: ["#Japanese Style Pizza 🍕"],
     website: "https://www.instagram.com/tototo_official/?hl=en",
   },
   {
@@ -76,7 +112,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "chez_tomo_ginza_1.jpeg",
     numImages: 9,
     location: "Chuo-Ku, Tokyo",
-    tags: ["French"],
+    tags: ["#Your Birthday Dinner 😙"],
     website: "http://www.chez-tomo.com/",
   },
   {
@@ -85,7 +121,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "momobukuro_1.jpeg",
     numImages: 2,
     location: "Toshima-Ku, Tokyo",
-    tags: ["Parfait"],
+    tags: ["#10/10 Parfait experience"],
     website: "https://risotteria-gaku.net",
   },
   {
@@ -94,7 +130,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "path_1.jpeg",
     numImages: 2,
     location: "Shibuya-Ku, Tokyo",
-    tags: ["French"],
+    tags: ["#definitely-worth-the-wait Dutch pancake"],
     website: "https://tabelog.com/en/tokyo/A1318/A131810/13190786/",
   },
   {
@@ -103,7 +139,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "woodberry_coffee_1.jpeg",
     numImages: 3,
     location: "Suginami-Ku, Tokyo",
-    tags: ["American"],
+    tags: ["#hidden gem in Ogikubo"],
     website: "https://woodberrycoffee.com/",
   },
   {
@@ -112,7 +148,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "tofu_shokudo_1.jpeg",
     numImages: 3,
     location: "Shibuya-Ku, Tokyo",
-    tags: ["Japanese"],
+    tags: ["#tofu paradise"],
     website: "https://tofushokudo.com/en/",
   },
   {
@@ -121,7 +157,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "smokehouse_1.jpeg",
     numImages: 3,
     location: "Shibuya-Ku, Tokyo",
-    tags: ["American"],
+    tags: ["#beer and meat"],
     website: "https://www.tysons.jp/smokehouse/",
   },
   {
@@ -130,7 +166,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "yakiniku_koyo_1.jpeg",
     numImages: 2,
     location: "Shinagawa-Ku, Tokyo",
-    tags: ["Korean"],
+    tags: ["#must-go yakiniku in Osaki Pt.2"],
     website: "https://tabelog.com/tokyo/A1316/A131604/13020181/",
   },
   {
@@ -139,7 +175,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "cicada_1.jpeg",
     numImages: 6,
     location: "Minato-Ku, Tokyo",
-    tags: ["Mediterranean"],
+    tags: ["#good food and good vibes 😙"],
     website: "https://www.tysons.jp/cicada/en/",
   },
   {
@@ -148,7 +184,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "kooriya_peace_1.jpeg",
     numImages: 3,
     location: "Musashino-Ku, Tokyo",
-    tags: ["Japanese"],
+    tags: ["#shaved ice on steroids"],
     website: "https://twitter.com/kooriya_peace",
   },
   {
@@ -157,7 +193,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "yakun_1.jpeg",
     numImages: 2,
     location: "Shinjuku-Ku, Tokyo",
-    tags: ["Singaporean"],
+    tags: ["#we tried EVERY toast 🤩"],
     website: "https://yakun.jp/",
   },
   {
@@ -166,7 +202,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "tim_ho_wan_1.jpeg",
     numImages: 3,
     location: "Shinjuku-Ku, Tokyo",
-    tags: ["Chinese"],
+    tags: ["#our first Michelin experience ⭐"],
     website: "https://timhowan.jp/en/",
   },
   {
@@ -175,7 +211,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "pancake_house_1.jpeg",
     numImages: 2,
     location: "Musashino-Ku, Tokyo",
-    tags: ["Western"],
+    tags: ["#cheese inside a Pancake!"],
     website: "http://pancake-house.jp/kichijyoji-food/",
   },
   {
@@ -184,7 +220,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "tsukumi_1.jpeg",
     numImages: 2,
     location: "Suginami-Ku, Tokyo",
-    tags: ["Japanese"],
+    tags: ["#Mochi Dessert 🥰"],
     website: "https://byo.co.jp/tsukumi/",
   },
   {
@@ -193,7 +229,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "tokyo_tojan_seikatsu_1.jpeg",
     numImages: 4,
     location: "Shinagawa-Ku, Tokyo",
-    tags: ["Taiwanese"],
+    tags: ["#Taiwan Style Breakfast"],
     website: "https://twitter.com/Tokyodoujan",
   },
   {
@@ -202,7 +238,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "t.y._harbor_1.jpeg",
     numImages: 5,
     location: "Shinagawa-Ku, Tokyo",
-    tags: ["American"],
+    tags: ["#Awesome Food and Ambience"],
     website: "https://www.tysons.jp/tyharbor/",
   },
   {
@@ -211,7 +247,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "janai_coffee_1.jpeg",
     numImages: 3,
     location: "Shibuya-Ku, Tokyo",
-    tags: ["American"],
+    tags: ["#A hidden bar 🤫"],
     website: "https://janaicoffee.tokyo/",
   },
   {
@@ -220,7 +256,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "yakiniku_masan_1.jpeg",
     numImages: 3,
     location: "Shinagawa-Ku, Tokyo",
-    tags: ["Korean"],
+    tags: ["#must-go Yakiniku in Osaki Pt.1"],
     website: "",
   },
   {
@@ -229,7 +265,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "ivy_place_1.jpeg",
     numImages: 2,
     location: "Shibuya-Ku, Tokyo",
-    tags: ["Western"],
+    tags: ["#fire brunch pancakes 🔥"],
     website: "https://www.tysons.jp/ivyplace/en/",
   },
   {
@@ -238,7 +274,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "good_cheese_good_pizza_1.jpeg",
     numImages: 2,
     location: "Chiyoda-Ku, Tokyo",
-    tags: ["Italian"],
+    tags: ["#cheese 🧀"],
     website: "https://goodcheesegoodpizza.com/",
   },
   {
@@ -247,7 +283,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "moana_kitchen_cafe_1.jpeg",
     numImages: 2,
     location: "Shibuya-Ku, Tokyo",
-    tags: ["Hawaiian"],
+    tags: ["#hawaiian food"],
     website: "http://www.rincrew.co.jp/moana/",
   },
   {
@@ -256,7 +292,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "bills_1.jpeg",
     numImages: 3,
     location: "Shibuya-Ku, Tokyo",
-    tags: ["Western"],
+    tags: ["#our first brunch date in Japan!"],
     website: "https://billsjapan.com/en/omotesando",
   },
   {
@@ -265,7 +301,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "los_angeles_balcony_1.jpeg",
     numImages: 3,
     location: "Shinagawa-Ku, Tokyo",
-    tags: ["American"],
+    tags: ["#delicious, free, and flavored water (and food)"],
     website: "https://www.los-angeles-balcony.com/restaurant.html",
   },
   {
@@ -274,7 +310,7 @@ export const restaurants: Restaurant[] = [
     thumbnail: "el_caliente_1.jpeg",
     numImages: 3,
     location: "Minato-Ku, Tokyo",
-    tags: ["Mexican"],
+    tags: ["#good Mexican food and cocktails"],
     website: "https://www.huge.co.jp/restaurant/modern-mexicano/elcaliente",
   },
 ];
@@ -286,7 +322,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "waterman_grille_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 4,
-    tags: ["American"],
+    tags: ["#the cheese plate 😍"],
     website: "https://www.watermangrille.com/",
   },
   {
@@ -295,7 +331,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "coffee_connection_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 1,
-    tags: ["American"],
+    tags: ["#our go-to for acai bowl (AND almond toast)"],
     website: "https://coffeeconnectionri.com/",
   },
   {
@@ -304,7 +340,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "heng_thai_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 3,
-    tags: ["Thai"],
+    tags: ["#duck duck soup soup"],
     website: "https://www.hengpvd.com/home",
   },
   {
@@ -313,7 +349,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "pickerel_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 2,
-    tags: ["Japanese"],
+    tags: ["#solid ramen restaurant"],
     website: "http://pckrl.com/",
   },
   {
@@ -322,7 +358,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "the_capital_grille_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 6,
-    tags: ["American"],
+    tags: ["#ONE YEAR 😍"],
     website: "https://www.thecapitalgrille.com/home",
   },
   {
@@ -331,7 +367,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "madrid_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 1,
-    tags: ["European"],
+    tags: ["#FANCY pastries"],
     website: "https://www.madrideuropeanbakery.com/",
   },
   {
@@ -340,7 +376,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "shabu_zen_1.jpeg",
     location: "Boston, USA",
     numImages: 1,
-    tags: ["Japanese"],
+    tags: ["#shabu shabu dinner before keshi!"],
     website: "https://www.shabuzen.com/",
   },
   {
@@ -349,7 +385,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "sydney_providence_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 5,
-    tags: ["European"],
+    tags: ["#our favorite brunch spot"],
     website: "https://www.sydneypvd.com/",
   },
   {
@@ -358,7 +394,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "india_restaurant_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 3,
-    tags: ["Indian"],
+    tags: ["#naan basket 💀"],
     website: "https://indiarestaurant.com/",
   },
   {
@@ -367,7 +403,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "pastiche_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 2,
-    tags: ["European"],
+    tags: ["#we need to try their fruit tart 😔"],
     website: "https://pastichefinedesserts.com/",
   },
   {
@@ -376,7 +412,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "the_river_social_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 3,
-    tags: ["International"],
+    tags: ["#10/10 flavor and presentation"],
     website: "https://www.theriversocial.com/",
   },
   {
@@ -385,7 +421,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "snowport_holiday_market_1.jpeg",
     location: "Boston, USA",
     numImages: 3,
-    tags: ["Christmas"],
+    tags: ["#christmas festival!"],
     website: "https://www.bostonseaport.xyz/holidaymarket/",
   },
   {
@@ -394,7 +430,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "ganko_ittetsu_ramen_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 3,
-    tags: ["Japanese"],
+    tags: ["#you will be missed"],
     website: "https://gankoramen.com/",
   },
   {
@@ -403,8 +439,17 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "dolores_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 4,
-    tags: ["Mexican"],
+    tags: ["#that cheese appetizer OMG"],
     website: "https://www.dolorespvd.com/",
+  },
+  {
+    name: "Gyukaku",
+    date: "20221106",
+    thumbnail: "gyukaku_1.jpeg",
+    location: "Boston, USA",
+    numImages: 2,
+    tags: ["#gyukaku never misses"],
+    website: "https://www.gyu-kaku.com/southbay/",
   },
   {
     name: "Tatte",
@@ -412,7 +457,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "tatte_1.jpeg",
     location: "Boston, USA",
     numImages: 1,
-    tags: ["American"],
+    tags: ["#after boston career forum 🕴"],
     website: "https://tattebakery.com/",
   },
   {
@@ -421,7 +466,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "den_den_asiana_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 4,
-    tags: ["Asian"],
+    tags: ["#authentic Japanese food"],
     website: "https://www.dendenhospitality.com/dendencafe",
   },
   {
@@ -430,7 +475,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "providence_donut_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 3,
-    tags: ["American"],
+    tags: ["#the day we devoured 6 HUGE donuts"],
     website: "https://www.pvdonuts.com/",
   },
   {
@@ -439,7 +484,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "persimmon_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 7,
-    tags: ["New American"],
+    tags: ["#Foie gras"],
     website: "http://www.persimmonri.com/",
   },
   {
@@ -448,7 +493,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "louis_family_restaurant_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 2,
-    tags: ["American"],
+    tags: ["#I wish I could eat their pancakes every day"],
     website: "https://www.louisrestaurant.org/",
   },
   {
@@ -457,7 +502,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "il_massimo_1.jpeg",
     numImages: 5,
     location: "Providence, RI, USA",
-    tags: ["Italian"],
+    tags: ["#The place I learned how to pronounce gnocchi"],
     website: "https://massimori.com/",
   },
   {
@@ -466,7 +511,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "ceremony_1.jpeg",
     location: "Providence, RI, USA",
     numImages: 2,
-    tags: ["Japanese"],
+    tags: ["#Our favorite study spot"],
     website: "https://www.ceremonypvd.com/",
   },
   {
@@ -475,7 +520,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "nami_1.jpeg",
     numImages: 3,
     location: "Providence, RI, USA",
-    tags: ["Japanese"],
+    tags: ["#the beef roll was SOOO GOOOD"],
     website: "https://namiprov.com/",
   },
   {
@@ -484,7 +529,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "soban_1.jpeg",
     numImages: 1,
     location: "Providence, RI, USA",
-    tags: ["Korean"],
+    tags: ["#kimchi fried rice"],
     website: "https://www.sobanbbqchicken.com/",
   },
   {
@@ -493,7 +538,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "mokban_korean_bistro_1.jpeg",
     numImages: 4,
     location: "Providence, RI, USA",
-    tags: ["Korean"],
+    tags: ["#our first official date 😉"],
     website: "https://www.mokban.com/",
   },
   {
@@ -502,7 +547,7 @@ export const globalRestaurants: Restaurant[] = [
     thumbnail: "den_den_korean_fried_chicken_1.jpeg",
     numImages: 7,
     location: "Providence, RI, USA",
-    tags: ["Korean"],
+    tags: ["#our first unofficial date 😉"],
     website: "https://www.dendenhospitality.com/dendenfriedchicken",
   },
 ];
