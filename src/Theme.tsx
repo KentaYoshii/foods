@@ -14,7 +14,7 @@ theme.typography.h2 = {
 
 theme.typography.body1 = {
     fontSize: '1.05rem',
-    fontWeight: 300,
+    fontWeight: 301,
     lineHeight: 1.25,
     '@media (min-width:600px)': {
         fontSize: '1.25rem',
