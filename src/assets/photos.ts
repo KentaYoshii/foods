@@ -17,6 +17,42 @@ export const perPage = 6;
 
 export const restaurants: Restaurant[] = [
   {
+    name: "Irori Teahouse",
+    date: "20230812",
+    thumbnail: "irori_teahouse_1.jpeg",
+    numImages: 3,
+    location: "Atami, Shizuoka",
+    tags: ["#We enjoyed every bit of the sashi boat🐟!"],
+    website: "https://irorichaya.gorp.jp/",
+  },
+  {
+    name: "Ryan",
+    date: "20230805",
+    thumbnail: "ryan_1.jpeg",
+    numImages: 5,
+    location: "Shibuya-Ku, Tokyo",
+    tags: ["#Best Soba EVER!"],
+    website: "https://www.tysons.jp/ryan/en/",
+  },
+  {
+    name: "Can Cam Night Pool",
+    date: "20230804",
+    thumbnail: "can_cam_night_pool_1.jpeg",
+    numImages: 2,
+    location: "Minato-Ku, Tokyo",
+    tags: ["#Our first night pool together!"],
+    website: "https://cancam.jp/nightpool2023",
+  },
+  {
+    name: "Captains Wharf",
+    date: "20230719",
+    thumbnail: "captains_wharf_1.jpeg",
+    numImages: 6,
+    location: "Shinagawa-Ku, Tokyo",
+    tags: ["#Vibes 10/10, Food 10/10, Views 10/10!"],
+    website: "https://www.captains-wharf-tokyo.com/",
+  },
+  {
     name: "Taiwan Ten Cafe",
     date: "20230708",
     thumbnail: "taiwan_ten_cafe_1.jpeg",
@@ -316,6 +352,24 @@ export const restaurants: Restaurant[] = [
 ];
 
 export const globalRestaurants: Restaurant[] = [
+  {
+    name: "Aguardente",
+    date: "20230902",
+    thumbnail: "aguardente_1.jpeg",
+    location: "Providence, RI, USA",
+    numImages: 4,
+    tags: ["#Queijo Fresco 🥰"],
+    website: "https://aguardente.com/",
+  },
+  {
+    name: "Coffee Exchange",
+    date: "20230829",
+    thumbnail: "coffee_exchange_1.jpeg",
+    location: "Providence, RI, USA",
+    numImages: 1,
+    tags: ["#op free wifi and tea"],
+    website: "https://www.thecoffeeexchange.com/",
+  },
   {
     name: "Waterman Grille",
     date: "20230418",
