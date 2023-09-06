@@ -353,6 +353,15 @@ export const restaurants: Restaurant[] = [
 
 export const globalRestaurants: Restaurant[] = [
   {
+    name: "Cafe Nuovo",
+    date: "20230905",
+    thumbnail: "cafe_nuovo_1.jpeg",
+    location: "Providence, RI, USA",
+    numImages: 4,
+    tags: ["#Celebrating my job offer!"],
+    website: "https://www.cafenuovo.com/",
+  },
+  {
     name: "Aguardente",
     date: "20230902",
     thumbnail: "aguardente_1.jpeg",
