@@ -1,7 +1,7 @@
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { GiJapan, GiWorld } from "react-icons/gi"
+import { GiJapan, GiWorld, GiHearts } from "react-icons/gi"
 
 export default function IconLabelTabs(props: {setRegion: (r: number) => void, region: number}) {
 
@@ -13,13 +13,14 @@ export default function IconLabelTabs(props: {setRegion: (r: number) => void, re
     <Tabs
       value={props.region}
       onChange={handleChange}
-      aria-label="icon label tabs example"
+      aria-label="icon label tabs"
       sx={{
         maxWidth: "100%",
       }}
     >
       <Tab icon={<GiJapan size="2rem" color="black"/>} label="Japan" />
       <Tab icon={<GiWorld size="2rem" color="black" />} label="World" />
+      <Tab icon={<GiHearts size="2rem" color="black" />} label="Favs" />
     </Tabs>
   );
 }

@@ -17,6 +17,18 @@ export const getRestaurantInRange = (
   return globalRestaurants.slice(begin, end);
 };
 
+export const getFavorites = async () => {
+  const threshold = 4.8;
+  const union = restaurants.concat(globalRestaurants);
+  const filtered = union.filter((r) => {
+    const currRating = r.rating;
+    return currRating >= threshold ? true : false;
+  })
+  const res = await getThumbnailPresignURLs(filtered);
+  res.sort((a, b) => b.rating - a.rating)
+  return res;
+}
+
 export const getRs = async (begin: number, end: number, region: number) => {
   const rs = getRestaurantInRange(begin, end, region);
   const res_rs = await getThumbnailPresignURLs(rs);

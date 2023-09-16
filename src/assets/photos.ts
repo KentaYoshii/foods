@@ -11,6 +11,7 @@ export interface Restaurant {
   location: string;
   tags: string[];
   website: string;
+  rating: number;
 }
 
 export const perPage = 6;
@@ -24,6 +25,7 @@ export const restaurants: Restaurant[] = [
     location: "Atami, Shizuoka",
     tags: ["#We enjoyed every bit of the sashi boat🐟!"],
     website: "https://irorichaya.gorp.jp/",
+    rating: 4.2,
   },
   {
     name: "Ryan",
@@ -33,6 +35,7 @@ export const restaurants: Restaurant[] = [
     location: "Shibuya-Ku, Tokyo",
     tags: ["#Best Soba EVER!"],
     website: "https://www.tysons.jp/ryan/en/",
+    rating: 4.5,
   },
   {
     name: "Can Cam Night Pool",
@@ -42,6 +45,7 @@ export const restaurants: Restaurant[] = [
     location: "Minato-Ku, Tokyo",
     tags: ["#Our first night pool together!"],
     website: "https://cancam.jp/nightpool2023",
+    rating: 2.5,
   },
   {
     name: "Captains Wharf",
@@ -51,6 +55,7 @@ export const restaurants: Restaurant[] = [
     location: "Shinagawa-Ku, Tokyo",
     tags: ["#Vibes 10/10, Food 10/10, Views 10/10!"],
     website: "https://www.captains-wharf-tokyo.com/",
+    rating: 4.5,
   },
   {
     name: "Taiwan Ten Cafe",
@@ -60,6 +65,7 @@ export const restaurants: Restaurant[] = [
     location: "Shinjuku-Ku, Tokyo",
     tags: ["#Taiwanese dinner before Indiana Jones!"],
     website: "https://taiwan-ten.com/",
+    rating: 3.8,
   },
   {
     name: "crisscross",
@@ -69,6 +75,7 @@ export const restaurants: Restaurant[] = [
     location: "Minato-Ku, Tokyo",
     tags: ["#Melon Pancake ❤️️"],
     website: "https://www.strings-hotel.jp/omotesando/restaurant/tavern/",
+    rating: 4.4,
   },
   {
     name: "Tavern by the Green",
@@ -78,6 +85,7 @@ export const restaurants: Restaurant[] = [
     location: "Minato-Ku, Tokyo",
     tags: ["#Our First Afternoon Tea 😋"],
     website: "https://www.strings-hotel.jp/omotesando/restaurant/tavern/",
+    rating: 4.3,
   },
   {
     name: "Amam Dacotan",
@@ -87,6 +95,7 @@ export const restaurants: Restaurant[] = [
     location: "Minato-Ku, Tokyo",
     tags: ["#BEST Bread Ever 🥖"],
     website: "https://amamdacotan.com/",
+    rating: 4.6,
   },
   {
     name: "Tobiccho",
@@ -96,6 +105,7 @@ export const restaurants: Restaurant[] = [
     location: "Enoshima, Kanagawa",
     tags: ["#Kaisendon"],
     website: "http://tobiccho.com/",
+    rating: 4.2,
   },
   {
     name: "Komachi Street",
@@ -105,6 +115,7 @@ export const restaurants: Restaurant[] = [
     location: "Kamakura, Kanagawa",
     tags: ["#Tabearuki"],
     website: "https://www.japan.travel/en/spot/1586/",
+    rating: 4.8,
   },
   {
     name: "Benitsuru",
@@ -114,6 +125,7 @@ export const restaurants: Restaurant[] = [
     location: "Taito-Ku, Tokyo",
     tags: ["#BEST Pancakes Ever 🥞"],
     website: "https://www.facebook.com/profile.php?id=100036174444589&ref=br_rs",
+    rating: 4.9,
   },
   {
     name: "Vietnam Festival",
@@ -123,6 +135,7 @@ export const restaurants: Restaurant[] = [
     location: "Shibuya-Ku, Tokyo",
     tags: ["#Food Festival!"],
     website: "http://www.vietnamfes.net/",
+    rating: 4.0,
   },
   {
     name: "Loncafe",
@@ -132,6 +145,7 @@ export const restaurants: Restaurant[] = [
     location: "Meguro-Ku, Tokyo",
     tags: ["#sweet & savory french toast"],
     website: "https://loncafe.jp/",
+    rating: 3.8,
   },
   {
     name: "Tototo",
@@ -141,6 +155,7 @@ export const restaurants: Restaurant[] = [
     location: "Nakano-Ku, Tokyo",
     tags: ["#Japanese Style Pizza 🍕"],
     website: "https://www.instagram.com/tototo_official/?hl=en",
+    rating: 4.1,
   },
   {
     name: "Chez Tomo Ginza",
@@ -150,6 +165,7 @@ export const restaurants: Restaurant[] = [
     location: "Chuo-Ku, Tokyo",
     tags: ["#Your Birthday Dinner 😙"],
     website: "http://www.chez-tomo.com/",
+    rating: 4.9,
   },
   {
     name: "Momobukuro",
@@ -159,6 +175,7 @@ export const restaurants: Restaurant[] = [
     location: "Toshima-Ku, Tokyo",
     tags: ["#10/10 Parfait experience"],
     website: "https://risotteria-gaku.net",
+    rating: 4.6,
   },
   {
     name: "Path",
@@ -168,6 +185,7 @@ export const restaurants: Restaurant[] = [
     location: "Shibuya-Ku, Tokyo",
     tags: ["#definitely-worth-the-wait Dutch pancake"],
     website: "https://tabelog.com/en/tokyo/A1318/A131810/13190786/",
+    rating: 4.6,
   },
   {
     name: "Woodberry Coffee",
@@ -177,6 +195,7 @@ export const restaurants: Restaurant[] = [
     location: "Suginami-Ku, Tokyo",
     tags: ["#hidden gem in Ogikubo"],
     website: "https://woodberrycoffee.com/",
+    rating: 4.2,
   },
   {
     name: "Tofu Shokudo",
@@ -186,6 +205,7 @@ export const restaurants: Restaurant[] = [
     location: "Shibuya-Ku, Tokyo",
     tags: ["#tofu paradise"],
     website: "https://tofushokudo.com/en/",
+    rating: 4.3,
   },
   {
     name: "Smokehouse",
@@ -195,6 +215,7 @@ export const restaurants: Restaurant[] = [
     location: "Shibuya-Ku, Tokyo",
     tags: ["#beer and meat"],
     website: "https://www.tysons.jp/smokehouse/",
+    rating: 4.5,
   },
   {
     name: "Yakiniku Koyo",
@@ -204,6 +225,7 @@ export const restaurants: Restaurant[] = [
     location: "Shinagawa-Ku, Tokyo",
     tags: ["#must-go yakiniku in Osaki Pt.2"],
     website: "https://tabelog.com/tokyo/A1316/A131604/13020181/",
+    rating: 4.7,
   },
   {
     name: "CICADA",
@@ -213,6 +235,7 @@ export const restaurants: Restaurant[] = [
     location: "Minato-Ku, Tokyo",
     tags: ["#good food and good vibes 😙"],
     website: "https://www.tysons.jp/cicada/en/",
+    rating: 4.8,
   },
   {
     name: "Kooriya Peace",
@@ -222,6 +245,7 @@ export const restaurants: Restaurant[] = [
     location: "Musashino-Ku, Tokyo",
     tags: ["#shaved ice on steroids"],
     website: "https://twitter.com/kooriya_peace",
+    rating: 4.5,
   },
   {
     name: "Yakun",
@@ -231,6 +255,7 @@ export const restaurants: Restaurant[] = [
     location: "Shinjuku-Ku, Tokyo",
     tags: ["#we tried EVERY toast 🤩"],
     website: "https://yakun.jp/",
+    rating: 4.2,
   },
   {
     name: "Tim Ho Wan",
@@ -240,6 +265,7 @@ export const restaurants: Restaurant[] = [
     location: "Shinjuku-Ku, Tokyo",
     tags: ["#our first Michelin experience ⭐"],
     website: "https://timhowan.jp/en/",
+    rating: 4.1,
   },
   {
     name: "Pancake House",
@@ -249,6 +275,7 @@ export const restaurants: Restaurant[] = [
     location: "Musashino-Ku, Tokyo",
     tags: ["#cheese inside a Pancake!"],
     website: "http://pancake-house.jp/kichijyoji-food/",
+    rating: 3.9,
   },
   {
     name: "Tsukumi",
@@ -258,6 +285,7 @@ export const restaurants: Restaurant[] = [
     location: "Suginami-Ku, Tokyo",
     tags: ["#Mochi Dessert 🥰"],
     website: "https://byo.co.jp/tsukumi/",
+    rating: 3.9,
   },
   {
     name: "Tokyo Tojan Seikatsu",
@@ -267,6 +295,7 @@ export const restaurants: Restaurant[] = [
     location: "Shinagawa-Ku, Tokyo",
     tags: ["#Taiwan Style Breakfast"],
     website: "https://twitter.com/Tokyodoujan",
+    rating: 4.0,
   },
   {
     name: "T.Y. Harbor",
@@ -276,6 +305,7 @@ export const restaurants: Restaurant[] = [
     location: "Shinagawa-Ku, Tokyo",
     tags: ["#Awesome Food and Ambience"],
     website: "https://www.tysons.jp/tyharbor/",
+    rating: 4.9,
   },
   {
     name: "Janai Coffee",
@@ -285,6 +315,7 @@ export const restaurants: Restaurant[] = [
     location: "Shibuya-Ku, Tokyo",
     tags: ["#A hidden bar 🤫"],
     website: "https://janaicoffee.tokyo/",
+    rating: 3.8,
   },
   {
     name: "Yakiniku Masan",
@@ -294,6 +325,7 @@ export const restaurants: Restaurant[] = [
     location: "Shinagawa-Ku, Tokyo",
     tags: ["#must-go Yakiniku in Osaki Pt.1"],
     website: "",
+    rating: 4.9,
   },
   {
     name: "Ivy Place",
@@ -303,6 +335,7 @@ export const restaurants: Restaurant[] = [
     location: "Shibuya-Ku, Tokyo",
     tags: ["#fire brunch pancakes 🔥"],
     website: "https://www.tysons.jp/ivyplace/en/",
+    rating: 4.9,
   },
   {
     name: "Good Cheese Good Pizza",
@@ -312,6 +345,7 @@ export const restaurants: Restaurant[] = [
     location: "Chiyoda-Ku, Tokyo",
     tags: ["#cheese 🧀"],
     website: "https://goodcheesegoodpizza.com/",
+    rating: 4.5,
   },
   {
     name: "Moana Kitchen Cafe",
@@ -321,6 +355,7 @@ export const restaurants: Restaurant[] = [
     location: "Shibuya-Ku, Tokyo",
     tags: ["#hawaiian food"],
     website: "http://www.rincrew.co.jp/moana/",
+    rating: 3.9,
   },
   {
     name: "Bills",
@@ -330,6 +365,7 @@ export const restaurants: Restaurant[] = [
     location: "Shibuya-Ku, Tokyo",
     tags: ["#our first brunch date in Japan!"],
     website: "https://billsjapan.com/en/omotesando",
+    rating: 4.6,
   },
   {
     name: "Los Angeles Balcony",
@@ -339,6 +375,7 @@ export const restaurants: Restaurant[] = [
     location: "Shinagawa-Ku, Tokyo",
     tags: ["#delicious, free, and flavored water (and food)"],
     website: "https://www.los-angeles-balcony.com/restaurant.html",
+    rating: 4.0,
   },
   {
     name: "El Caliente",
@@ -348,6 +385,7 @@ export const restaurants: Restaurant[] = [
     location: "Minato-Ku, Tokyo",
     tags: ["#good Mexican food and cocktails"],
     website: "https://www.huge.co.jp/restaurant/modern-mexicano/elcaliente",
+    rating: 4.6,
   },
 ];
 
@@ -360,6 +398,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 4,
     tags: ["#Celebrating my job offer!"],
     website: "https://www.cafenuovo.com/",
+    rating: 4.5,
   },
   {
     name: "Aguardente",
@@ -369,6 +408,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 4,
     tags: ["#Queijo Fresco 🥰"],
     website: "https://aguardente.com/",
+    rating: 4.9,
   },
   {
     name: "Coffee Exchange",
@@ -378,6 +418,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 1,
     tags: ["#op free wifi and tea"],
     website: "https://www.thecoffeeexchange.com/",
+    rating: 4.6,
   },
   {
     name: "Waterman Grille",
@@ -387,6 +428,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 4,
     tags: ["#the cheese plate 😍"],
     website: "https://www.watermangrille.com/",
+    rating: 5.0,
   },
   {
     name: "Coffee Connection",
@@ -396,6 +438,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 1,
     tags: ["#our go-to for acai bowl (AND almond toast)"],
     website: "https://coffeeconnectionri.com/",
+    rating: 5.0,
   },
   {
     name: "Heng Thai",
@@ -405,6 +448,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 3,
     tags: ["#duck duck soup soup"],
     website: "https://www.hengpvd.com/home",
+    rating: 4.8,
   },
   {
     name: "Pickerel",
@@ -414,6 +458,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 2,
     tags: ["#solid ramen restaurant"],
     website: "http://pckrl.com/",
+    rating: 4.5,
   },
   {
     name: "The Capital Grille",
@@ -423,6 +468,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 6,
     tags: ["#ONE YEAR 😍"],
     website: "https://www.thecapitalgrille.com/home",
+    rating: 5.0,
   },
   {
     name: "Madrid",
@@ -432,6 +478,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 1,
     tags: ["#FANCY pastries"],
     website: "https://www.madrideuropeanbakery.com/",
+    rating: 4.5,
   },
   {
     name: "Shabu Zen",
@@ -441,6 +488,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 1,
     tags: ["#shabu shabu dinner before keshi!"],
     website: "https://www.shabuzen.com/",
+    rating: 4.4,
   },
   {
     name: "Sydney Providence",
@@ -450,6 +498,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 5,
     tags: ["#our favorite brunch spot"],
     website: "https://www.sydneypvd.com/",
+    rating: 4.6,
   },
   {
     name: "India Restaurant",
@@ -459,6 +508,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 3,
     tags: ["#naan basket 💀"],
     website: "https://indiarestaurant.com/",
+    rating: 4.5,
   },
   {
     name: "Pastiche",
@@ -468,6 +518,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 2,
     tags: ["#we need to try their fruit tart 😔"],
     website: "https://pastichefinedesserts.com/",
+    rating: 4.5,
   },
   {
     name: "The River Social",
@@ -477,6 +528,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 3,
     tags: ["#10/10 flavor and presentation"],
     website: "https://www.theriversocial.com/",
+    rating: 4.7,
   },
   {
     name: "Snowport Holiday Market",
@@ -486,6 +538,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 3,
     tags: ["#christmas festival!"],
     website: "https://www.bostonseaport.xyz/holidaymarket/",
+    rating: 4.5,
   },
   {
     name: "Ganko Ittetsu Ramen",
@@ -495,6 +548,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 3,
     tags: ["#you will be missed"],
     website: "https://gankoramen.com/",
+    rating: 4.4,
   },
   {
     name: "Dolores",
@@ -504,6 +558,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 4,
     tags: ["#that cheese appetizer OMG"],
     website: "https://www.dolorespvd.com/",
+    rating: 4.7,
   },
   {
     name: "Gyukaku",
@@ -513,6 +568,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 2,
     tags: ["#gyukaku never misses"],
     website: "https://www.gyu-kaku.com/southbay/",
+    rating: 4.5,
   },
   {
     name: "Tatte",
@@ -522,6 +578,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 1,
     tags: ["#after boston career forum 🕴"],
     website: "https://tattebakery.com/",
+    rating: 4.5,
   },
   {
     name: "Den Den Asiana",
@@ -531,6 +588,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 4,
     tags: ["#authentic Japanese food"],
     website: "https://www.dendenhospitality.com/dendencafe",
+    rating: 4.8,
   },
   {
     name: "Providence Donut",
@@ -540,6 +598,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 3,
     tags: ["#the day we devoured 6 HUGE donuts"],
     website: "https://www.pvdonuts.com/",
+    rating: 4.4,
   },
   {
     name: "Persimmon",
@@ -549,6 +608,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 7,
     tags: ["#Foie gras"],
     website: "http://www.persimmonri.com/",
+    rating: 5.0,
   },
   {
     name: "Louis Family Restaurant",
@@ -558,6 +618,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 2,
     tags: ["#I wish I could eat their pancakes every day"],
     website: "https://www.louisrestaurant.org/",
+    rating: 4.8,
   },
   {
     name: "IL MASSIMO",
@@ -567,6 +628,7 @@ export const globalRestaurants: Restaurant[] = [
     location: "Providence, RI, USA",
     tags: ["#The place I learned how to pronounce gnocchi"],
     website: "https://massimori.com/",
+    rating: 4.3,
   },
   {
     name: "Ceremony",
@@ -576,6 +638,7 @@ export const globalRestaurants: Restaurant[] = [
     numImages: 2,
     tags: ["#Our favorite study spot"],
     website: "https://www.ceremonypvd.com/",
+    rating: 4.7,
   },
   {
     name: "Nami",
@@ -585,6 +648,7 @@ export const globalRestaurants: Restaurant[] = [
     location: "Providence, RI, USA",
     tags: ["#the beef roll was SOOO GOOOD"],
     website: "https://namiprov.com/",
+    rating: 4.4,
   },
   {
     name: "Soban",
@@ -594,6 +658,7 @@ export const globalRestaurants: Restaurant[] = [
     location: "Providence, RI, USA",
     tags: ["#kimchi fried rice"],
     website: "https://www.sobanbbqchicken.com/",
+    rating: 4.7,
   },
   {
     name: "Mokban Korean Bistro",
@@ -603,6 +668,7 @@ export const globalRestaurants: Restaurant[] = [
     location: "Providence, RI, USA",
     tags: ["#our first official date 😉"],
     website: "https://www.mokban.com/",
+    rating: 4.8,
   },
   {
     name: "Den Den KFC",
@@ -612,6 +678,7 @@ export const globalRestaurants: Restaurant[] = [
     location: "Providence, RI, USA",
     tags: ["#our first unofficial date 😉"],
     website: "https://www.dendenhospitality.com/dendenfriedchicken",
+    rating: 5.0,
   },
 ];
 

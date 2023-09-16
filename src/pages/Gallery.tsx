@@ -7,12 +7,22 @@ import {
   FormControl,
   Input,
   InputLabel,
+  MenuItem,
+  Select,
+  Divider,
 } from "@mui/material";
 import GalleryContent from "../components/GalleryContent";
 import IconLabelTabs from "../components/Tabs";
 import React, { useState, useEffect } from "react";
-import { numRs, numGRs, perPage, Restaurant, restaurants, globalRestaurants } from "../assets/photos";
-import { getRs } from "../utils/helper";
+import {
+  numRs,
+  numGRs,
+  perPage,
+  Restaurant,
+  restaurants,
+  globalRestaurants,
+} from "../assets/photos";
+import { getRs, getFavorites } from "../utils/helper";
 import { getThumbnailPresignURLs } from "../utils/s3_helper";
 
 const Gallery = () => {
@@ -26,6 +36,7 @@ const Gallery = () => {
   const [load, setLoad] = useState(new Array(perPage).fill(false));
   // showPagination == false if search bar is in use
   const [showPagination, setShowPagination] = useState(true);
+  const [showFilters, setShowFilters] = useState(true);
   // reset the gallery
   const [reset, setReset] = useState(false);
   // search bar state tracker
@@ -36,20 +47,33 @@ const Gallery = () => {
 
   useEffect(() => {
     setReady(false);
-    setShowPagination(true);
     setImages([]);
     setCurQuery("");
-    getRs(0, perPage, region).then((res) => {
-      setImages(res);
-      if (region === 0) {
-        setOriginalImages(restaurants);
-      } else {
-        setOriginalImages(globalRestaurants);
-      }
-      setLoad(new Array(perPage).fill(false));
-      setCurrPage(1);
-      setReady(true);
-    });
+    if (region !== 2) {
+      setShowFilters(true);
+      setShowPagination(true);
+      getRs(0, perPage, region).then((res) => {
+        setImages(res);
+        if (region === 0) {
+          setOriginalImages(restaurants);
+        } else if (region === 1) {
+          setOriginalImages(globalRestaurants);
+        }
+        setLoad(new Array(perPage).fill(false));
+        setCurrPage(1);
+        setReady(true);
+      });
+    } else {
+      // fav tab
+      setShowFilters(false);
+      setShowPagination(false);
+      getFavorites().then((res) => {
+        setImages(res);
+        setLoad(new Array(res.length).fill(false));
+        setReady(true);
+        return;
+      });
+    }
   }, [region, reset]);
 
   // Helper
@@ -77,20 +101,22 @@ const Gallery = () => {
     setReady(true);
   };
 
-  const onNameInputChange = async (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+  const onNameInputChange = async (
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
     if (e.target.value === "") {
       // reset
       setShowPagination(true);
       setCurQuery("");
       setReset(!reset);
-      return
-    } 
+      return;
+    }
     setCurQuery(e.target.value);
     setShowPagination(false);
-    let query = e.target.value.toLowerCase().replace(/[^0-9a-z]/gi, '');
+    let query = e.target.value.toLowerCase().replace(/[^0-9a-z]/gi, "");
     const imagesToQueryFrom = originalImages;
     const newImages = imagesToQueryFrom.filter((image: Restaurant) => {
-      const name = image.name.toLowerCase().replace(/[^0-9a-z]/gi, '');
+      const name = image.name.toLowerCase().replace(/[^0-9a-z]/gi, "");
       return name.includes(query) ? true : false;
     });
     setReady(false);
@@ -98,8 +124,8 @@ const Gallery = () => {
     const res = await getThumbnailPresignURLs(newImages);
     setImages(res);
     setLoad(new Array(res.length).fill(false));
-    setReady(true);    
-  }
+    setReady(true);
+  };
 
   return (
     <Box>
@@ -110,23 +136,48 @@ const Gallery = () => {
         }}
       >
         <Grid container>
-          <Grid item xs={12}>
+          <Grid item xs={12} mb={2}>
             <Box alignItems="center" display="flex" justifyContent="center">
               <IconLabelTabs setRegion={setRegion} region={region} />
             </Box>
           </Grid>
-          <Grid item xs={12} m={2}>
-            <Box alignItems="center" display="flex" justifyContent="center">
-              <FormControl variant="standard">
-                <InputLabel htmlFor="component-simple">Restaurant Name</InputLabel>
-                <Input
-                  id="component-simple"
-                  onChange={onNameInputChange}
-                  value={curQuery}
-                />
-              </FormControl>
-            </Box>
-          </Grid>
+          {showFilters && (
+            <Grid container mb={2} mt={1} item xs={12} justifyContent="center" spacing={3}>
+              <Grid item>
+                <Box alignItems="center" display="flex" justifyContent="center">
+                  <FormControl variant="standard" sx={{ maxWidth: 120 }}>
+                    <InputLabel htmlFor="component-simple">Name</InputLabel>
+                    <Input
+                      id="component-simple"
+                      onChange={onNameInputChange}
+                      value={curQuery}
+                    />
+                  </FormControl>
+                </Box>
+              </Grid>
+              <Grid item>
+                <Divider orientation="vertical">or</Divider>
+              </Grid>
+              <Grid item >
+                <Box alignItems="center" display="flex" justifyContent="center">
+                  <FormControl sx={{ minWidth: 120 }} variant="standard">
+                    <InputLabel id="demo-simple-select-label">Genre</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      // value={age}
+                      label="Age"
+                      // onChange={handleChange}
+                    >
+                      <MenuItem value={10}>Ten</MenuItem>
+                      <MenuItem value={20}>Twenty</MenuItem>
+                      <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </Grid>
+            </Grid>
+          )}
           <Grow in={ready} {...(ready ? { timeout: 2500 } : {})}>
             <Grid container mb={showPagination ? 0 : 2}>
               <Grid item xs={12} mt={3}>
@@ -140,17 +191,19 @@ const Gallery = () => {
               </Grid>
             </Grid>
           </Grow>
-          {showPagination && <Grid item xs={12} mt={5} mb={5}>
-            <Box alignItems="center" display="center" justifyContent="center">
-              <Pagination
-                count={region === 0 ? tkyPgCnt : gPgCnt}
-                onChange={onPageChange}
-                showFirstButton
-                showLastButton
-                siblingCount={0}
-              />
-            </Box>
-          </Grid>}
+          {showPagination && (
+            <Grid item xs={12} mt={5} mb={5}>
+              <Box alignItems="center" display="center" justifyContent="center">
+                <Pagination
+                  count={region === 0 ? tkyPgCnt : gPgCnt}
+                  onChange={onPageChange}
+                  showFirstButton
+                  showLastButton
+                  siblingCount={0}
+                />
+              </Box>
+            </Grid>
+          )}
         </Grid>
       </Container>
     </Box>

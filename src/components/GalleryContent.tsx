@@ -3,9 +3,11 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { Box, CardContent, Grid, IconButton, Typography } from "@mui/material";
 import { useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { useTheme, styled } from "@mui/material/styles";
 import { GrCircleInformation } from "react-icons/gr";
 import { CgUnavailable } from "react-icons/cg";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { Restaurant } from "../assets/photos";
 import {
   Card,
@@ -13,6 +15,7 @@ import {
   CardMedia,
   CardActionArea,
   Modal,
+  Rating,
 } from "@mui/material";
 import loading from "../assets/loading.gif";
 import { getRImages } from "../utils/helper";
@@ -54,6 +57,12 @@ const GalleryContent = (props: {
     bgcolor: "background.paper",
     boxShadow: 24,
   };
+
+  const StyledRating = styled(Rating)({
+    "& .MuiRating-iconFilled": {
+      color: "#ff6d75",
+    },
+  });
 
   return (
     <>
@@ -155,17 +164,33 @@ const GalleryContent = (props: {
               </CardActionArea>
               <CardContent>
                 <Grid container justifyContent="space-evenly">
-                  <Grid item mt={1}>
+                  <Grid item xs={12} mt={1} mb={1}>
                     <Box
                       display="flex"
                       justifyContent="center"
                       alignItems="center"
                     >
-                      <Typography variant="body2">
-                          {item.tags[0]}
-                      </Typography>
+                      <Typography variant="body2">{item.tags[0]}</Typography>
                     </Box>
                   </Grid>
+                </Grid>
+                <Grid item xs={12}>
+                  <Box
+                    alignItems="center"
+                    justifyContent="center"
+                    display="flex"
+                  >
+                    <StyledRating
+                      name="customized-color"
+                      defaultValue={item.rating}
+                      getLabelText={(value: number) =>
+                        `${value} Heart${value !== 1 ? "s" : ""}`
+                      }
+                      precision={0.1}
+                      icon={<FavoriteIcon fontSize="inherit" />}
+                      emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+                    />
+                  </Box>
                 </Grid>
               </CardContent>
             </Card>
