@@ -605,7 +605,7 @@ export const globalRestaurants: Restaurant[] = [
     website: "https://www.mokban.com/",
   },
   {
-    name: "Den Den Korean Fried Chicken",
+    name: "Den Den KFC",
     date: "20220310",
     thumbnail: "den_den_korean_fried_chicken_1.jpeg",
     numImages: 7,
