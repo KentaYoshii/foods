@@ -7,7 +7,6 @@ import "./App.css";
 function App() {
   const Layout = () => {
     const location = useLocation();
-    console.log(location.pathname);
     return (
       <>
         <Header current={location.pathname} />

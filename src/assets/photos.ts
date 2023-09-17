@@ -1,7 +1,21 @@
-export interface ImageType {
-  key: String;
-  title: String;
-}
+export const genre: string[] =[
+  "All",
+  "Japanese",
+  "Korean",
+  "French",
+  "Italian",
+  "American",
+  "Mexican",
+  "Mediterranean",
+  "Vietnamese",
+  "Chinese",
+  "Indian",
+  "Singaporean",
+  "Thai",
+  "Taiwanese",
+  "European",
+  "Fusion"
+]
 
 export interface Restaurant {
   name: string;
@@ -12,6 +26,7 @@ export interface Restaurant {
   tags: string[];
   website: string;
   rating: number;
+  genre: string;
 }
 
 export const perPage = 6;
@@ -26,6 +41,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#We enjoyed every bit of the sashi boat🐟!"],
     website: "https://irorichaya.gorp.jp/",
     rating: 4.2,
+    genre: "Japanese",
   },
   {
     name: "Ryan",
@@ -36,6 +52,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Best Soba EVER!"],
     website: "https://www.tysons.jp/ryan/en/",
     rating: 4.5,
+    genre: "Japanese",
   },
   {
     name: "Can Cam Night Pool",
@@ -46,6 +63,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Our first night pool together!"],
     website: "https://cancam.jp/nightpool2023",
     rating: 2.5,
+    genre: "American",
   },
   {
     name: "Captains Wharf",
@@ -56,6 +74,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Vibes 10/10, Food 10/10, Views 10/10!"],
     website: "https://www.captains-wharf-tokyo.com/",
     rating: 4.5,
+    genre: "Mediterranean",
   },
   {
     name: "Taiwan Ten Cafe",
@@ -66,6 +85,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Taiwanese dinner before Indiana Jones!"],
     website: "https://taiwan-ten.com/",
     rating: 3.8,
+    genre: "Taiwanese",
   },
   {
     name: "crisscross",
@@ -76,6 +96,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Melon Pancake ❤️️"],
     website: "https://www.strings-hotel.jp/omotesando/restaurant/tavern/",
     rating: 4.4,
+    genre: "American",
   },
   {
     name: "Tavern by the Green",
@@ -86,6 +107,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Our First Afternoon Tea 😋"],
     website: "https://www.strings-hotel.jp/omotesando/restaurant/tavern/",
     rating: 4.3,
+    genre: "European",
   },
   {
     name: "Amam Dacotan",
@@ -96,6 +118,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#BEST Bread Ever 🥖"],
     website: "https://amamdacotan.com/",
     rating: 4.6,
+    genre: "European",
   },
   {
     name: "Tobiccho",
@@ -106,6 +129,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Kaisendon"],
     website: "http://tobiccho.com/",
     rating: 4.2,
+    genre: "Japanese"
   },
   {
     name: "Komachi Street",
@@ -116,6 +140,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Tabearuki"],
     website: "https://www.japan.travel/en/spot/1586/",
     rating: 4.8,
+    genre: "Japanese",
   },
   {
     name: "Benitsuru",
@@ -126,6 +151,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#BEST Pancakes Ever 🥞"],
     website: "https://www.facebook.com/profile.php?id=100036174444589&ref=br_rs",
     rating: 4.9,
+    genre: "Fusion"
   },
   {
     name: "Vietnam Festival",
@@ -136,6 +162,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Food Festival!"],
     website: "http://www.vietnamfes.net/",
     rating: 4.0,
+    genre: "Vietnamese"
   },
   {
     name: "Loncafe",
@@ -146,6 +173,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#sweet & savory french toast"],
     website: "https://loncafe.jp/",
     rating: 3.8,
+    genre: "American"
   },
   {
     name: "Tototo",
@@ -156,6 +184,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Japanese Style Pizza 🍕"],
     website: "https://www.instagram.com/tototo_official/?hl=en",
     rating: 4.1,
+    genre: "Fusion"
   },
   {
     name: "Chez Tomo Ginza",
@@ -166,6 +195,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Your Birthday Dinner 😙"],
     website: "http://www.chez-tomo.com/",
     rating: 4.9,
+    genre: "French"
   },
   {
     name: "Momobukuro",
@@ -176,6 +206,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#10/10 Parfait experience"],
     website: "https://risotteria-gaku.net",
     rating: 4.6,
+    genre: "American"
   },
   {
     name: "Path",
@@ -186,6 +217,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#definitely-worth-the-wait Dutch pancake"],
     website: "https://tabelog.com/en/tokyo/A1318/A131810/13190786/",
     rating: 4.6,
+    genre: "European"
   },
   {
     name: "Woodberry Coffee",
@@ -196,6 +228,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#hidden gem in Ogikubo"],
     website: "https://woodberrycoffee.com/",
     rating: 4.2,
+    genre: "American"
   },
   {
     name: "Tofu Shokudo",
@@ -206,6 +239,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#tofu paradise"],
     website: "https://tofushokudo.com/en/",
     rating: 4.3,
+    genre: "Japanese"
   },
   {
     name: "Smokehouse",
@@ -216,6 +250,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#beer and meat"],
     website: "https://www.tysons.jp/smokehouse/",
     rating: 4.5,
+    genre: "American"
   },
   {
     name: "Yakiniku Koyo",
@@ -226,6 +261,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#must-go yakiniku in Osaki Pt.2"],
     website: "https://tabelog.com/tokyo/A1316/A131604/13020181/",
     rating: 4.7,
+    genre: "Korean"
   },
   {
     name: "CICADA",
@@ -236,6 +272,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#good food and good vibes 😙"],
     website: "https://www.tysons.jp/cicada/en/",
     rating: 4.8,
+    genre: "Mediterranean"
   },
   {
     name: "Kooriya Peace",
@@ -246,6 +283,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#shaved ice on steroids"],
     website: "https://twitter.com/kooriya_peace",
     rating: 4.5,
+    genre: "Japanese"
   },
   {
     name: "Yakun",
@@ -256,6 +294,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#we tried EVERY toast 🤩"],
     website: "https://yakun.jp/",
     rating: 4.2,
+    genre: "Singaporean"
   },
   {
     name: "Tim Ho Wan",
@@ -266,6 +305,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#our first Michelin experience ⭐"],
     website: "https://timhowan.jp/en/",
     rating: 4.1,
+    genre: "Chinese"
   },
   {
     name: "Pancake House",
@@ -276,6 +316,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#cheese inside a Pancake!"],
     website: "http://pancake-house.jp/kichijyoji-food/",
     rating: 3.9,
+    genre: "American"
   },
   {
     name: "Tsukumi",
@@ -286,6 +327,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Mochi Dessert 🥰"],
     website: "https://byo.co.jp/tsukumi/",
     rating: 3.9,
+    genre: "Japanese"
   },
   {
     name: "Tokyo Tojan Seikatsu",
@@ -296,6 +338,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Taiwan Style Breakfast"],
     website: "https://twitter.com/Tokyodoujan",
     rating: 4.0,
+    genre: "Taiwanese"
   },
   {
     name: "T.Y. Harbor",
@@ -306,6 +349,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#Awesome Food and Ambience"],
     website: "https://www.tysons.jp/tyharbor/",
     rating: 4.9,
+    genre: "American"
   },
   {
     name: "Janai Coffee",
@@ -316,6 +360,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#A hidden bar 🤫"],
     website: "https://janaicoffee.tokyo/",
     rating: 3.8,
+    genre: "American"
   },
   {
     name: "Yakiniku Masan",
@@ -326,6 +371,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#must-go Yakiniku in Osaki Pt.1"],
     website: "",
     rating: 4.9,
+    genre: "Korean"
   },
   {
     name: "Ivy Place",
@@ -336,6 +382,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#fire brunch pancakes 🔥"],
     website: "https://www.tysons.jp/ivyplace/en/",
     rating: 4.9,
+    genre: "American"
   },
   {
     name: "Good Cheese Good Pizza",
@@ -346,6 +393,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#cheese 🧀"],
     website: "https://goodcheesegoodpizza.com/",
     rating: 4.5,
+    genre: "Italian"
   },
   {
     name: "Moana Kitchen Cafe",
@@ -356,6 +404,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#hawaiian food"],
     website: "http://www.rincrew.co.jp/moana/",
     rating: 3.9,
+    genre: "American"
   },
   {
     name: "Bills",
@@ -366,6 +415,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#our first brunch date in Japan!"],
     website: "https://billsjapan.com/en/omotesando",
     rating: 4.6,
+    genre: "American"
   },
   {
     name: "Los Angeles Balcony",
@@ -376,6 +426,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#delicious, free, and flavored water (and food)"],
     website: "https://www.los-angeles-balcony.com/restaurant.html",
     rating: 4.0,
+    genre: "American"
   },
   {
     name: "El Caliente",
@@ -386,6 +437,7 @@ export const restaurants: Restaurant[] = [
     tags: ["#good Mexican food and cocktails"],
     website: "https://www.huge.co.jp/restaurant/modern-mexicano/elcaliente",
     rating: 4.6,
+    genre: "Mexican"
   },
 ];
 
@@ -399,6 +451,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#Celebrating my job offer!"],
     website: "https://www.cafenuovo.com/",
     rating: 4.5,
+    genre: "Fusion"
   },
   {
     name: "Aguardente",
@@ -409,6 +462,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#Queijo Fresco 🥰"],
     website: "https://aguardente.com/",
     rating: 4.9,
+    genre: "Spanish"
   },
   {
     name: "Coffee Exchange",
@@ -419,6 +473,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#op free wifi and tea"],
     website: "https://www.thecoffeeexchange.com/",
     rating: 4.6,
+    genre: "American"
   },
   {
     name: "Waterman Grille",
@@ -429,6 +484,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#the cheese plate 😍"],
     website: "https://www.watermangrille.com/",
     rating: 5.0,
+    genre: "American"
   },
   {
     name: "Coffee Connection",
@@ -439,6 +495,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#our go-to for acai bowl (AND almond toast)"],
     website: "https://coffeeconnectionri.com/",
     rating: 5.0,
+    genre: "American"
   },
   {
     name: "Heng Thai",
@@ -449,6 +506,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#duck duck soup soup"],
     website: "https://www.hengpvd.com/home",
     rating: 4.8,
+    genre: "Thai"
   },
   {
     name: "Pickerel",
@@ -459,6 +517,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#solid ramen restaurant"],
     website: "http://pckrl.com/",
     rating: 4.5,
+    genre: "Japanese"
   },
   {
     name: "The Capital Grille",
@@ -469,6 +528,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#ONE YEAR 😍"],
     website: "https://www.thecapitalgrille.com/home",
     rating: 5.0,
+    genre: "American"
   },
   {
     name: "Madrid",
@@ -479,6 +539,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#FANCY pastries"],
     website: "https://www.madrideuropeanbakery.com/",
     rating: 4.5,
+    genre: "European"
   },
   {
     name: "Shabu Zen",
@@ -489,6 +550,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#shabu shabu dinner before keshi!"],
     website: "https://www.shabuzen.com/",
     rating: 4.4,
+    genre: "Japanese"
   },
   {
     name: "Sydney Providence",
@@ -499,6 +561,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#our favorite brunch spot"],
     website: "https://www.sydneypvd.com/",
     rating: 4.6,
+    genre: "American"
   },
   {
     name: "India Restaurant",
@@ -509,6 +572,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#naan basket 💀"],
     website: "https://indiarestaurant.com/",
     rating: 4.5,
+    genre: "Indian"
   },
   {
     name: "Pastiche",
@@ -519,6 +583,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#we need to try their fruit tart 😔"],
     website: "https://pastichefinedesserts.com/",
     rating: 4.5,
+    genre: "European"
   },
   {
     name: "The River Social",
@@ -529,6 +594,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#10/10 flavor and presentation"],
     website: "https://www.theriversocial.com/",
     rating: 4.7,
+    genre: "American"
   },
   {
     name: "Snowport Holiday Market",
@@ -539,6 +605,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#christmas festival!"],
     website: "https://www.bostonseaport.xyz/holidaymarket/",
     rating: 4.5,
+    genre: "American"
   },
   {
     name: "Ganko Ittetsu Ramen",
@@ -549,6 +616,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#you will be missed"],
     website: "https://gankoramen.com/",
     rating: 4.4,
+    genre: "Japanese"
   },
   {
     name: "Dolores",
@@ -559,6 +627,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#that cheese appetizer OMG"],
     website: "https://www.dolorespvd.com/",
     rating: 4.7,
+    genre: "Mexican"
   },
   {
     name: "Gyukaku",
@@ -569,6 +638,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#gyukaku never misses"],
     website: "https://www.gyu-kaku.com/southbay/",
     rating: 4.5,
+    genre: "Japanese"
   },
   {
     name: "Tatte",
@@ -579,6 +649,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#after boston career forum 🕴"],
     website: "https://tattebakery.com/",
     rating: 4.5,
+    genre: "American"
   },
   {
     name: "Den Den Asiana",
@@ -589,6 +660,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#authentic Japanese food"],
     website: "https://www.dendenhospitality.com/dendencafe",
     rating: 4.8,
+    genre: "Korean"
   },
   {
     name: "Providence Donut",
@@ -599,6 +671,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#the day we devoured 6 HUGE donuts"],
     website: "https://www.pvdonuts.com/",
     rating: 4.4,
+    genre: "American"
   },
   {
     name: "Persimmon",
@@ -609,6 +682,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#Foie gras"],
     website: "http://www.persimmonri.com/",
     rating: 5.0,
+    genre: "Fusion"
   },
   {
     name: "Louis Family Restaurant",
@@ -619,6 +693,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#I wish I could eat their pancakes every day"],
     website: "https://www.louisrestaurant.org/",
     rating: 4.8,
+    genre: "American"
   },
   {
     name: "IL MASSIMO",
@@ -629,6 +704,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#The place I learned how to pronounce gnocchi"],
     website: "https://massimori.com/",
     rating: 4.3,
+    genre: "Italian"
   },
   {
     name: "Ceremony",
@@ -639,6 +715,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#Our favorite study spot"],
     website: "https://www.ceremonypvd.com/",
     rating: 4.7,
+    genre: "Fusion"
   },
   {
     name: "Nami",
@@ -649,6 +726,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#the beef roll was SOOO GOOOD"],
     website: "https://namiprov.com/",
     rating: 4.4,
+    genre: "Japanese"
   },
   {
     name: "Soban",
@@ -659,6 +737,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#kimchi fried rice"],
     website: "https://www.sobanbbqchicken.com/",
     rating: 4.7,
+    genre: "Korean"
   },
   {
     name: "Mokban Korean Bistro",
@@ -669,6 +748,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#our first official date 😉"],
     website: "https://www.mokban.com/",
     rating: 4.8,
+    genre: "Korean"
   },
   {
     name: "Den Den KFC",
@@ -679,6 +759,7 @@ export const globalRestaurants: Restaurant[] = [
     tags: ["#our first unofficial date 😉"],
     website: "https://www.dendenhospitality.com/dendenfriedchicken",
     rating: 5.0,
+    genre: "Korean"
   },
 ];
 

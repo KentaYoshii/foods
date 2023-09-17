@@ -10,6 +10,8 @@ import {
   MenuItem,
   Select,
   Divider,
+  SelectChangeEvent,
+  Button,
 } from "@mui/material";
 import GalleryContent from "../components/GalleryContent";
 import IconLabelTabs from "../components/Tabs";
@@ -21,6 +23,7 @@ import {
   Restaurant,
   restaurants,
   globalRestaurants,
+  genre,
 } from "../assets/photos";
 import { getRs, getFavorites } from "../utils/helper";
 import { getThumbnailPresignURLs } from "../utils/s3_helper";
@@ -41,6 +44,8 @@ const Gallery = () => {
   const [reset, setReset] = useState(false);
   // search bar state tracker
   const [curQuery, setCurQuery] = useState("");
+  // genre
+  const [curGenre, setCurGenre] = useState("All");
 
   const tkyPgCnt = Math.ceil(numRs / perPage);
   const gPgCnt = Math.ceil(numGRs / perPage);
@@ -49,9 +54,9 @@ const Gallery = () => {
     setReady(false);
     setImages([]);
     setCurQuery("");
+    setCurGenre("All");
     if (region !== 2) {
       setShowFilters(true);
-      setShowPagination(true);
       getRs(0, perPage, region).then((res) => {
         setImages(res);
         if (region === 0) {
@@ -61,6 +66,7 @@ const Gallery = () => {
         }
         setLoad(new Array(perPage).fill(false));
         setCurrPage(1);
+        setShowPagination(true);
         setReady(true);
       });
     } else {
@@ -127,6 +133,30 @@ const Gallery = () => {
     setReady(true);
   };
 
+  const onGenreChange = async (e: SelectChangeEvent) => {
+    if (e.target.value === "All") {
+      // reset
+      setShowPagination(true);
+      setCurGenre("All");
+      setCurQuery("");
+      setReset(!reset);
+      return;
+    }
+    setCurGenre(e.target.value);
+    setShowPagination(false);
+    const imagesToQueryFrom = originalImages;
+    const newImages = imagesToQueryFrom.filter((image) => {
+      const g = image.genre;
+      return g === e.target.value ? true : false;
+    });
+    setReady(false);
+    setImages([]);
+    const res = await getThumbnailPresignURLs(newImages);
+    setImages(res);
+    setLoad(new Array(res.length).fill(false));
+    setReady(true);
+  };
+
   return (
     <Box>
       <Container
@@ -142,11 +172,25 @@ const Gallery = () => {
             </Box>
           </Grid>
           {showFilters && (
-            <Grid container mb={2} mt={1} item xs={12} justifyContent="center" spacing={3}>
+            <Grid
+              container
+              mb={2}
+              mt={1}
+              item
+              xs={12}
+              justifyContent="center"
+              spacing={3}
+            >
               <Grid item>
                 <Box alignItems="center" display="flex" justifyContent="center">
-                  <FormControl variant="standard" sx={{ maxWidth: 120 }}>
-                    <InputLabel htmlFor="component-simple">Name</InputLabel>
+                  <FormControl
+                    variant="standard"
+                    sx={{ maxWidth: 120 }}
+                    size="small"
+                  >
+                    <InputLabel htmlFor="component-simple" size="small">
+                      Name
+                    </InputLabel>
                     <Input
                       id="component-simple"
                       onChange={onNameInputChange}
@@ -158,26 +202,41 @@ const Gallery = () => {
               <Grid item>
                 <Divider orientation="vertical">or</Divider>
               </Grid>
-              <Grid item >
+              <Grid item>
                 <Box alignItems="center" display="flex" justifyContent="center">
-                  <FormControl sx={{ minWidth: 120 }} variant="standard">
+                  <FormControl
+                    sx={{ minWidth: 120 }}
+                    variant="standard"
+                    size="small"
+                  >
                     <InputLabel id="demo-simple-select-label">Genre</InputLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
-                      // value={age}
-                      label="Age"
-                      // onChange={handleChange}
+                      value={curGenre}
+                      label="genre"
+                      onChange={onGenreChange}
                     >
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      <MenuItem value={30}>Thirty</MenuItem>
+                      {genre.map((g, idx) => (
+                        <MenuItem value={g} key={idx} id={g}>
+                          {g}
+                        </MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
                 </Box>
               </Grid>
             </Grid>
           )}
+          {(curQuery !== "" || curGenre !== "All" ) && <Grid item xs={12}>
+            <Box justifyContent="center" alignItems="center" display="flex">
+              <Button variant="text"
+              onClick={() => {
+                setReset(!reset);
+              }}
+              >Clear</Button>
+            </Box>
+          </Grid>}
           <Grow in={ready} {...(ready ? { timeout: 2500 } : {})}>
             <Grid container mb={showPagination ? 0 : 2}>
               <Grid item xs={12} mt={3}>
