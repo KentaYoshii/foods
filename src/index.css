@@ -16,48 +16,15 @@ body, html {
   height: 100vh;
 }
 
-video {
-  width: inherit;
-  height: inherit;
-  object-fit: cover;
-  margin-bottom: -5px;
-}
-
 .content {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   top: 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
-}
-
-.aboutContent {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  padding-top: 15vh;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  overflow:inherit;
-}
-
-.about {
-  position: absolute;
-  width: auto;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 8%;
-  background-color: orange;
+  color: black;
 }
 
 .headerTop {

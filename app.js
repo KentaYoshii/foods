@@ -2,10 +2,13 @@ let intro = document.querySelector('.intro');
 let logo = document.querySelector('.logo-header');
 let logoSpan = document.querySelectorAll('.logo');
 
+window.addEventListener('beforeunload', (() => {
+    sessionStorage.clear();
+}))
+
 window.addEventListener('DOMContentLoaded', () => {
     if (window.location.href.includes("/gallery")) {
         let parent = window.location.href.substring(0, window.location.href.length - 8);        
-        console.log(parent);
         window.location.href = parent;
         return;
     }
