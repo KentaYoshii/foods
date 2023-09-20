@@ -128,7 +128,8 @@ const HomeContent = (props: { reload: string }) => {
     () => {
       setShowTitle(true);
     },
-    props.reload === "true" ? 4000 : 1000
+    1000
+    // props.reload === "true" ? 4000 : 1000
   );
 
   setTimeout(
@@ -136,7 +137,8 @@ const HomeContent = (props: { reload: string }) => {
       setShowImages(true);
       setInit(true);
     },
-    props.reload === "true" ? 4500 : 1500
+    1500
+    // props.reload === "true" ? 4500 : 1500
   );
 
   setTimeout(() => {
